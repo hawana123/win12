@@ -39,7 +39,7 @@
 	<link rel="stylesheet" href="apps/style/copilot.css">
 	<!--  掌声欢迎 语音识别输入法 的 css 引入(bs -->
 	<link rel="stylesheet" href="apps/style/recognition.css">
-	
+
 	<link rel="manifest" href="pwa/manifest.json">
 	<link rel="shortcut icon" href="./pwa/logo.png" type="image/x-icon">
 	<link rel="stylesheet" href="apps/style/login.css">
@@ -230,18 +230,18 @@ showcm(event,id,arg) 显示右键菜单，使用方法：oncontextmenu="return s
 
 		function insertTextAtCursor(text) {
 			var range, selection;
-			
+
 			if (window.getSelection) {
 				selection = window.getSelection();
-				
+
 				if (selection.rangeCount) {
 				range = selection.getRangeAt(0);
-				
+
 					if (range.commonAncestorContainer.parentNode.isContentEditable) {
 						range.collapse(false);
 						var textNode = document.createTextNode(text);
 						range.insertNode(textNode);
-						
+
 						range.setEndAfter(textNode);
 						range.setStartAfter(textNode);
 						selection.removeAllRanges();
@@ -1862,7 +1862,7 @@ showcm(event,id,arg) 显示右键菜单，使用方法：oncontextmenu="return s
 				}
 			"></input>
 			</div>
-			
+
 			<div class="keyb">
 				<a class="a b" onclick="appCalculator.square('calc-input')">𝑥²</a>
 				<a class="a b" onclick="appCalculator.squareRoot('calc-input')">√𝑥</a>
@@ -1912,22 +1912,8 @@ showcm(event,id,arg) 显示右键菜单，使用方法：oncontextmenu="return s
 				<h1 class="tit"><span></span>Windows 12 网页版</h1>
 				<div style="margin-left: 20px;">
 					<h2 class="tit"><span></span>简介</h2>
-					<p>&emsp;&emsp;Windows 12 网页版是一个开源项目，由星源(谭景元)原创，使用 HTML、CSS 和 JavaScript，在网络上模拟、创新操作系统。</p>
-					<p>&emsp;&emsp;此项目已发布至 GitHub，<a onclick="window.open('https://github.com/tjy-gitnub/win12','_blank');" win12_title="https://github.com/tjy-gitnub/win12" class="jump">点击此处查看</a>。</p>
-					<p>&emsp;&emsp;若您对于该项目有任何意见或建议，请在 GitHub 上<a onclick="window.open('https://github.com/tjy-gitnub/win12/issues','_blank');" win12_title="https://github.com/tjy-gitnub/win12/issues" class="jump">提交 issues</a>，您的问题会被尽可能快地解决。</p>
-					<p>&emsp;&emsp;原创作者星源，点击以<a onclick="window.open('https://tjy-gitnub.github.io/','_blank');" win12_title="https://tjy-gitnub.github.io/" class="jump">了解详细</a>。</p>
-					<h2 class="tit"><span></span>开源说明</h2>
-					<p>&emsp;&emsp;此项目是一个开源项目。此项目使用 EPL v2.0 开源许可。开源许可是具有法律效力的合同，请自觉遵守开源许可，尊重他人劳动。</p>
-					<p>&emsp;&emsp;根据许可，你可以对该项目进行传播、分发、修改以及二次发布，包括个人和商业用途。</p>
-					<p>&emsp;&emsp;但您必须给出源码来源，<strong>包括作者，项目链接等</strong>，必须使用相同的协议开源。</p>
-					<p>&emsp;&emsp;若此项目的源码作为项目的一部分与你私有的源码一起发布时，你可以使用其它协议，<strong>但要声明 EPL 部分的内容并声明此部分继续遵循 EPL 协议</strong>。</p>
-					<p>&emsp;&emsp;不是在该项目基础上进行增加、修改的，仅参考源码的，不需要开源，但也仅供学习用途。</p>
-					<h2 class="tit"><span></span>特别感谢</h2>
-					<p>&emsp;&emsp;<strong>特别感谢 @NB-Group</strong></p>
-					<p>&emsp;&emsp;NB-Group 为本项目的后端开发做出了重要贡献</p>
-					<p>&emsp;&emsp;在此表示特别感谢！</p>
-					<h2 class="tit"><span></span>贡献者</h2>
-					<p>&emsp;&emsp;感谢所有项目的贡献者（实时数据，计算方法：即为 Commits 次数）</p>
+					<p>&emsp;&emsp;Windows 12 网页版是一个开源项目，使用 HTML、CSS 和 JavaScript，在网络上模拟、创新操作系统。</p>
+
 					<div id="contri">
 						<loading>
 							<svg width="30px" height="30px" viewBox="0 0 16 16">
@@ -1937,8 +1923,6 @@ showcm(event,id,arg) 显示右键菜单，使用方法：oncontextmenu="return s
 							</svg>
 						</loading>
 					</div>
-					<h2 class="tit"><span></span>Star</h2>
-					<p>&emsp;&emsp;感谢<a class="jump" win12_title="给个 Star 好不好？(即将跳转到：https://github.com/tjy-gitnub/win12/stargazers)" onclick="window.open('https://github.com/tjy-gitnub/win12/stargazers','_blank')">所有支持我们的人</a>。</p>
 					<div id="StarShow">
 						<loading>
 							<svg width="30px" height="30px" viewBox="0 0 16 16">
