@@ -15,7 +15,7 @@ timer = setInterval(function () {
         if (timer != undefined) {
             clearInterval(timer);
         }
-        window.location.href = "./desktop.html";
+        window.location.href = "./index.html";
     }
 }, 300);
 function toBIOS() {
