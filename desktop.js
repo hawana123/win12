@@ -1,6 +1,6 @@
 // 后端服务器
 // loadlang();
-const server = 'http://win12server.freehk.svipss.top/';
+const server = ''; // 'http://win12server.freehk.svipss.top/';
 const pages = {
     'get-title': '', // 获取标题
 };

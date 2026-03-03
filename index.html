@@ -47,10 +47,27 @@
 	<link rel="stylesheet" href="module/tab.css">
 	<base target="_blank">
 
-	<title>Windows 12 网页版</title>
-	<meta name="description" content="Windows 12网页版是一个在线体验Windows 12操作系统的开源项目,使用 HTML、CSS 和 JavaScript 模拟 Windows 12 操作系统的界面与交互。">
-<!-- 	<meta name="keywords" content="Windows 12, windows 12, Windows12, windows12, Windows 12 网页版, Windows 12网页版, Windows12网页版, windows12网页版, Win12, win12,Win12网页版, win12网页版, 网页版"> -->
-<!-- 	真正的SEO强者，是不会用keywords的 -->
+	<title>Windows 12 网页版 - 在线体验 Win12</title>
+	<meta name="description" content="Windows 12网页版是一个在线体验Windows 12操作系统的开源项目,无需安装即可在浏览器中体验 Win12 的界面与交互。">
+	<meta name="keywords" content="Windows 12, Win12, Windows 12 网页版, 在线体验, 操作系统模拟, WebOS, Vue, React, JavaScript">
+	
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://win12.zoz.la/">
+	<meta property="og:title" content="Windows 12 网页版 - 在线体验 Win12">
+	<meta property="og:description" content="无需安装，点击即刻在线体验 Windows 12 概念版。支持移动端适配，流畅的动画效果。">
+	<meta property="og:image" content="https://win12.zoz.la/icon/logo.svg">
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://win12.zoz.la/">
+	<meta property="twitter:title" content="Windows 12 网页版 - 在线体验 Win12">
+	<meta property="twitter:description" content="无需安装，点击即刻在线体验 Windows 12 概念版。">
+	<meta property="twitter:image" content="https://win12.zoz.la/icon/logo.svg">
+	
+	<link rel="canonical" href="https://win12.zoz.la/" />
+	<!-- 替换为国内 CDN 加速加载 -->
+	<script src="https://cdn.staticfile.org/Chart.js/2.9.4/Chart.min.js"></script>
 </head>
 <!-- 开发须知：
 为统一代码风格和增加可读性，为他人的便利，以下内容所有开发者、贡献者务必遵守，感谢配合
@@ -414,6 +431,9 @@ showcm(event,id,arg) 显示右键菜单，使用方法：oncontextmenu="return s
 				<div class="tool">
 					<p style="font-size: 40px;margin-bottom: -10px;" class="time">12:00</p>
 					<p class="date">星期一, 2368年13月34日</p>
+					<a class="a btn btn-icon share" win12_title="分享给朋友" onclick="if(navigator.share){navigator.share({title: 'Win12 网页版', text: '无需安装，点击即刻在线体验 Windows 12 概念版！', url: window.location.href})}else{alert('请复制链接分享：' + window.location.href)}">
+						<i class="bi bi-share"></i>
+					</a>
 					<a class="a btn btn-icon power" win12_title="电源" onclick="$(this).addClass('show')">
 						<span class="bi bi-power"></span>
 						<i class="bi bi-power" onclick="$('#start-menu').removeClass('show');
@@ -516,7 +536,14 @@ showcm(event,id,arg) 显示右键菜单，使用方法：oncontextmenu="return s
 					<a class="a tj-obj act"><img src="icon/files/img.png"><div><p>可口可乐瓶盖.jpg</p><p>7 分钟前</p></div></a>
 					<a class="a tj-obj act"><img src="icon/files/img.png"><div><p>瓶盖构造图.jpg</p><p>16 分钟前</p></div></a>
 					<a class="a tj-obj act"><img src="icon/files/word.png"><div><p>瓶盖的构造及作用.docx</p><p>24 分钟前</p></div></a>
-					<a class="a tj-obj act"><img src="icon/files/excel.png"><div><p>可口可乐瓶盖厚度.xlsx</p><p>35 分钟前</p></div></a>
+					<!-- 广告位 -->
+					<a class="a tj-obj act" onclick="window.open('https://github.com/tjy-gitnub/win12', '_blank')">
+						<img src="icon/logo.svg">
+						<div>
+							<p>给 Win12 网页版点个 Star ⭐</p>
+							<p>广告</p>
+						</div>
+					</a>
 				</div>
 			</div>
 		</div>
@@ -554,13 +581,28 @@ showcm(event,id,arg) 显示右键菜单，使用方法：oncontextmenu="return s
 				</list>
 			</div>
 			<div class="view">
-				<div class="fname">
+				<div class="ad-container" style="padding: 20px; text-align: center;">
+					<p style="color: #888; margin-bottom: 10px; font-size: 12px;">Sponsored</p>
+					<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7361597277581518"
+							crossorigin="anonymous"></script>
+					<!-- 搜索窗口广告 -->
+					<ins class="adsbygoogle"
+						 style="display:block"
+						 data-ad-client="ca-pub-7361597277581518"
+						 data-ad-slot="2672775738"
+						 data-ad-format="auto"
+						 data-full-width-responsive="true"></ins>
+					<script>
+						(adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+				</div>
+				<div class="fname" style="display:none">
 					<i class="bi bi-search"></i>
 					<p class="name"></p>
 					<p class="type"></p>
 				</div>
-				<hr>
-				<div class="option">
+				<hr style="display:none">
+				<div class="option" style="display:none">
 					<list>
 						<a class="a">打开</a>
 						<a class="a">打开文件所在位置</a>
@@ -1323,7 +1365,7 @@ showcm(event,id,arg) 显示右键菜单，使用方法：oncontextmenu="return s
 					</div>
 				</div>
 			</div>
-			<script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js'></script>
+
 
 			<script>
 				var chart = document.getElementById('chart').getContext('2d'),
@@ -1394,8 +1436,6 @@ showcm(event,id,arg) 显示右键菜单，使用方法：oncontextmenu="return s
 			</script>
 		</div>
 		<!-- partial -->
-		<script src='https://cdns.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js'></script>
-		<script src="https://unpkg.com/big.js@5.2.2/big.min.js"></script>
 	</div>
 	<div id="window-fill"></div>
 	<div class="window setting">
@@ -3133,16 +3173,16 @@ showcm(event,id,arg) 显示右键菜单，使用方法：oncontextmenu="return s
 	<script src="desktop.js"></script>
 	<script src="module/tab.js"></script>
 	<script src="scripts/setting_getTime.js"></script><!-- 设置页面获取时间逻辑 @Junchen Yi 2023-9-17-->
-	<script src="https://fastly.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js" async></script>
+	<!-- <script src="https://fastly.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js" async></script> -->
 	<!-- <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
 	<script defer src="https://pyscript.net/latest/pyscript.js"></script> -->         <!-- PyScript, 已弃用 -->
-	<script src="https://cdn.staticfile.org/ace/1.23.0/ace.min.js"></script>
+	<!-- <script src="https://cdn.staticfile.org/ace/1.23.0/ace.min.js"></script>
 	<script src="https://cdn.staticfile.org/ace/1.23.0/ext-language_tools.min.js"></script>
-	<script src="https://cdn.staticfile.org/ace/1.23.0/ext-error_marker.min.js"></script>
+	<script src="https://cdn.staticfile.org/ace/1.23.0/ext-error_marker.min.js"></script> -->
 	<script src='https://cdn.staticfile.org/big.js/6.2.1/big.min.js'></script>
 	<script src="./scripts/calculator_kernel.js"></script>
-	<script src='https://cdns.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js'></script>
-	<script type="text/javascript" src="//js.users.51.la/21858365.js"></script>
+
+	<!-- <script type="text/javascript" src="//js.users.51.la/21858365.js"></script> -->
 </body>
 
 </html>
