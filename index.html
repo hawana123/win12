@@ -50,7 +50,7 @@
 	<title>Windows 12 网页版 - 在线体验 Win12</title>
 	<meta name="description" content="Windows 12网页版是一个在线体验Windows 12操作系统的开源项目,无需安装即可在浏览器中体验 Win12 的界面与交互。">
 	<meta name="keywords" content="Windows 12, Win12, Windows 12 网页版, 在线体验, 操作系统模拟, WebOS, Vue, React, JavaScript">
-	
+
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://win12.zoz.la/">
@@ -64,8 +64,10 @@
 	<meta property="twitter:title" content="Windows 12 网页版 - 在线体验 Win12">
 	<meta property="twitter:description" content="无需安装，点击即刻在线体验 Windows 12 概念版。">
 	<meta property="twitter:image" content="https://win12.zoz.la/icon/logo.svg">
-	
+
 	<link rel="canonical" href="https://win12.zoz.la/" />
+	<!-- AdSense Script -->
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7361597277581518" crossorigin="anonymous"></script>
 	<!-- 替换为国内 CDN 加速加载 -->
 	<script src="https://cdn.staticfile.org/Chart.js/2.9.4/Chart.min.js"></script>
 </head>
@@ -367,7 +369,7 @@ showcm(event,id,arg) 显示右键菜单，使用方法：oncontextmenu="return s
 					<p>Python Editor</p>
 				</a>
 				<a oncontextmenu="return showcm(event, 'smlapp', ['python', 'Python 3.10.2'])"
-					onclick="openapp('python');hide_startmenu()">
+					onclick="openapp('python');hide_startmjiaenu()">
 					<img src="icon/python.svg">
 					<p>Python 3.10.2</p>
 				</a>
@@ -583,8 +585,6 @@ showcm(event,id,arg) 显示右键菜单，使用方法：oncontextmenu="return s
 			<div class="view">
 				<div class="ad-container" style="padding: 20px; text-align: center;">
 					<p style="color: #888; margin-bottom: 10px; font-size: 12px;">Sponsored</p>
-					<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7361597277581518"
-							crossorigin="anonymous"></script>
 					<!-- 搜索窗口广告 -->
 					<ins class="adsbygoogle"
 						 style="display:block"
@@ -788,8 +788,7 @@ showcm(event,id,arg) 显示右键菜单，使用方法：oncontextmenu="return s
 					<a class="a" style="margin: 0 0 0 170px;font-size: 17px;color: #9dd0fb;">详细信息 ></a>
 				</div>
 				<div class="card" style="grid-column: 3/6;grid-row: 5/7;">
-					<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7361597277581518"
-							crossorigin="anonymous"></script>
+
 					<!-- 内墙 -->
 					<ins class="adsbygoogle"
 						 style="display:block;"
@@ -802,8 +801,7 @@ showcm(event,id,arg) 显示右键菜单，使用方法：oncontextmenu="return s
 					</script>
 				</div>
 				<div class="card" style="grid-column: 1/4;grid-row: 3/5;">
-					<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7361597277581518"
-							crossorigin="anonymous"></script>
+
 					<!-- 内墙 -->
 					<ins class="adsbygoogle"
 						 style="display:block;"
@@ -1101,6 +1099,14 @@ showcm(event,id,arg) 显示右键菜单，使用方法：oncontextmenu="return s
 		<div class="b" ondblclick="shownotice('feedback');" ontouchstart="shownotice('feedback');;">
 			<img src="icon/feedback.svg">
 			<p>反馈中心</p>
+		</div>
+		<div class="b" ondblclick="window.open('https://av.zoz.la','_blank');" ontouchstart="window.open('https://av.zoz.la','_blank');" win12_title="https://av.zoz.la">
+			<img src="icon/avatar-magician.png">
+			<p>头像魔法师</p>
+		</div>
+		<div class="b" ondblclick="window.open('https://shici.zoz.la','_blank');" ontouchstart="window.open('https://shici.zoz.la','_blank');" win12_title="https://shici.zoz.la">
+			<img src="icon/chinese-poetry.png">
+			<p>中华诗词</p>
 		</div>
 		<span class="choose">
 		</span>
@@ -2425,7 +2431,7 @@ showcm(event,id,arg) 显示右键菜单，使用方法：oncontextmenu="return s
 			<img src="icon/wsa.png" class="icon">
 		</div>
 		<div class="content" id="win-wsa" style="margin-bottom:auto;">
-			<iframe src="https://android11react.osrc.com/" frameborder="0" style=" width: 100%;height: 100%;" loading="lazy"></iframe>
+<!--			<iframe src="https://android11react.osrc.com/" frameborder="0" style=" width: 100%;height: 100%;" loading="lazy"></iframe>-->
 		</div>
 	</div>
 	<div class="window pythonEditor">

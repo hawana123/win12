@@ -3817,6 +3817,14 @@ function setIcon() {
         <img src="icon/feedback.svg">
         <p>反馈中心</p>
     </div>
+    <div class="b" ondblclick="window.open('https://av.zoz.la','_blank');" ontouchstart="window.open('https://av.zoz.la','_blank');" win12_title="https://av.zoz.la">
+        <img src="icon/avatar-magician.png">
+        <p>头像魔法师</p>
+    </div>
+    <div class="b" ondblclick="window.open('https://shici.zoz.la','_blank');" ontouchstart="window.open('https://shici.zoz.la','_blank');" win12_title="https://shici.zoz.la">
+        <img src="icon/chinese-poetry.png">
+        <p>中华诗词</p>
+    </div>
     <span class="choose">
     </span>
     <p style="background-color: rgba(11,45,14,0);z-index:1;position: absolute;top:0px;left:0px;height:100%;width:100%" oncontextmenu="return showcm(event,'desktop');"></p>`;
