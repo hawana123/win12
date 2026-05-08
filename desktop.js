@@ -3825,6 +3825,10 @@ function setIcon() {
         <img src="icon/chinese-poetry.png">
         <p>中华诗词</p>
     </div>
+    <div class="b" ondblclick="window.open('https://aai.zoz.la','_blank');" ontouchstart="window.open('https://aai.zoz.la','_blank');" win12_title="https://aai.zoz.la">
+        <img src="icon/copilot.svg">
+        <p>AI前沿</p>
+    </div>
     <span class="choose">
     </span>
     <p style="background-color: rgba(11,45,14,0);z-index:1;position: absolute;top:0px;left:0px;height:100%;width:100%" oncontextmenu="return showcm(event,'desktop');"></p>`;
