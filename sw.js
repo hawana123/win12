@@ -1,7 +1,4 @@
 let dymanic = [
-  'api.github.com',
-  'tjy-gitnub.github.io/win12-theme',
-  'win12server.freehk.svipss.top',
   'assets.msn.cn'
 ]
 this.addEventListener('fetch', function (event) {
