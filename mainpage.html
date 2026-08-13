@@ -107,8 +107,10 @@
             var encodedQuery = encodeURIComponent(query);
             // 在新标签页中打开Bing搜索
             window.location = 'https://bing.com/search?q=' + encodedQuery;
-            // 可能报错
-            apps.edge.rename(query);
+            // 通知父窗口更新标签页名称
+            if (window.parent && window.parent.m_tab) {
+                window.parent.m_tab.rename('edge', query);
+            }
         }
 
         function navigateToURL(url) {
@@ -119,8 +121,10 @@
             }
             // 导航到指定URL
             window.location = url;
-            // 可能报错
-            apps.edge.rename(url);
+            // 通知父窗口更新标签页名称
+            if (window.parent && window.parent.m_tab) {
+                window.parent.m_tab.rename('edge', url);
+            }
         }
     </script>
     <script>

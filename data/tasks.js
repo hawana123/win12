@@ -58,6 +58,21 @@ let taskmgrTasks = [
         link: 'notepad'
     },
     {
+        name: '捐赠支持',
+        icon: 'icon/donate.svg',
+        link: 'donate'
+    },
+    {
+        name: '图片查看器',
+        icon: 'icon/files/picture.png',
+        link: 'picture-viewer'
+    },
+    {
+        name: '贪吃蛇',
+        icon: 'icon/snake.svg',
+        link: 'snake'
+    },
+    {
         name: '终端',
         icon: 'icon/terminal.svg',
         link: 'terminal'

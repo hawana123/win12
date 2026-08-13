@@ -72,5 +72,5 @@ Cloudflare AI 服务器 具体的代码可以在 [这里](Cloudflare%20AI.js) �
 辽宁沈阳 | 9ms | 35.173.69.207[弗吉尼亚阿什本亚马逊云]
 辽宁沈阳 | 157ms | 35.173.69.207[弗吉尼亚阿什本亚马逊云]
 
-![image](https://github.com/tjy-gitnub/win12/assets/121747915/a49a750e-210f-4cb1-b236-adcdd94eb1c9)
+
 

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="donateGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b6b"/>
+      <stop offset="100%" style="stop-color:#ee5a24"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#fff5f5"/>
+  <path d="M32 52 C32 52 12 38 12 24 C12 16 18 12 24 12 C28 12 31 14 32 17 C33 14 36 12 40 12 C46 12 52 16 52 24 C52 38 32 52 32 52Z" fill="url(#donateGrad)"/>
+  <text x="32" y="36" text-anchor="middle" font-size="18" font-weight="bold" fill="white">¥</text>
+</svg>

@@ -1970,7 +1970,7 @@ let apps = {
             return false;
         },
         // 禁止奇奇怪怪的缩进！尽量压行，不要毫无意义地全部格式化和展开！ 
-        path: {folder:{'C:':{folder:{'Program Files':{folder:{'WindowsApps':{folder:{},file:[]},'Microsoft':{folder:{},file:[]}},file:[{name:'about.exe',ico:'icon/about.svg',command:"openapp('about')"},{name:'setting.exe',ico:'icon/setting.svg',command:"openapp('setting')"},]},'Program Files (x86)':{folder:{'Microsoft':{folder:{'Edge':{folder:{'Application':{folder:{'SetupMetrics':{folder:{},file:[]}},file:[{name:'msedge.exe',ico:'icon/edge.svg',command:"openapp('edge')"}]}}}}}}},'Windows':{folder:{'Boot':{folder:{},file:[]},'System':{folder:{},file:[]},'SysWOW64':{folder:{},file:[]},'System32':{folder:{},file:[{name:'calc.exe',ico:'icon/calc.svg',command:"openapp('calc')"},{name:'cmd.exe',ico:'icon/terminal.svg',command:"openapp('terminal')"},{name:'notepad.exe',ico:'icon/notepad.svg',command:"openapp('notepad')"},{name:'taskmgr.exe',ico:'icon/taskmgr.png',command:"openapp('taskmgr')"},{name:'winver.exe',ico:'icon/about.svg',command:"openapp('winver')"},]}},file:[{name:'explorer.exe',ico:'icon/explorer.svg',command:"apps.explorer.newtab()"},{name:'notepad.exe',ico:'icon/notepad.svg',command:"openapp('notepad')"},{name:'py.exe',ico:'icon/python.png',command:"openapp('python')"},]},'用户':{folder:{'Administrator':{folder:{'文档':{folder:{'IISExpress':{folder:{},file:[]},'PowerToys':{folder:{},file:[]}},file:[{name:'瓶盖介绍.doc',ico:'icon/files/word.png',command:''},{name:'瓶盖质量统计分析.xlsx',ico:'icon/files/excel.png',command:''},]},'图片':{folder:{'本机照片':{folder:{},file:[]},'屏幕截图':{folder:{},file:[]}},file:[{name:'瓶盖构造图.png',ico:'icon/files/img.png',command:''},{name:'可口可乐瓶盖.jpg',ico:'icon/files/img.png',command:''},]},'AppData':{folder:{'Local':{folder:{'Microsoft':{folder:{'Windows':{folder:{'Fonts':{},'TaskManager':{},'Themes':{},'Shell':{},'应用程序快捷方式':{},}},}},'Programs':{folder:{'Python':{folder:{'Python310':{folder:{'DLLs':{},'Doc':{},'include':{},'Lib':{folder:{'site-packages':{},'tkinter':{},}},'libs':{},'Script':{},'share':{},'tcl':{},'Tools':{}},file:[{name:'python.exe',ico:'icon/python.png',command:"openapp('python')"}]}},}}},'Temp':{folder:{}},}},'LocalLow':{folder:{'Microsoft':{folder:{'Windows':{},}},}},'Roaming':{folder:{'Microsoft':{folder:{'Windows':{folder:{'「开始」菜单':{folder:{'程序':{folder:{}},}},}},}},}},},file:[]},'音乐':{folder:{'录音机':{folder:{},file:[]}}}}},'公用':{folder:{'公用文档':{folder:{'IISExpress':{folder:{},file:[]},'PowerToys':{folder:{},file:[]}},file:[]},'公用图片':{folder:{'本机照片':{folder:{},file:[]},'屏幕截图':{folder:{},file:[]}},file:[]},'公用音乐':{folder:{'录音机':{folder:{},file:[]}}}}}}}},file:[]},'D:':{folder:{'Microsoft':{folder:{},file:[]}},file:[{name:'瓶盖结构说明.docx',ico:'icon/files/word.png',command:''},{name:'可口可乐瓶盖历史.pptx',ico:'icon/files/ppt.png',command:''},]}}},
+        path: {folder:{'C:':{folder:{'Program Files':{folder:{'WindowsApps':{folder:{},file:[]},'Microsoft':{folder:{},file:[]}},file:[{name:'about.exe',ico:'icon/about.svg',command:"openapp('about')"},{name:'setting.exe',ico:'icon/setting.svg',command:"openapp('setting')"},]},'Program Files (x86)':{folder:{'Microsoft':{folder:{'Edge':{folder:{'Application':{folder:{'SetupMetrics':{folder:{},file:[]}},file:[{name:'msedge.exe',ico:'icon/edge.svg',command:"openapp('edge')"}]}}}}}}},'Windows':{folder:{'Boot':{folder:{},file:[]},'System':{folder:{},file:[]},'SysWOW64':{folder:{},file:[]},'System32':{folder:{},file:[{name:'calc.exe',ico:'icon/calc.svg',command:"openapp('calc')"},{name:'cmd.exe',ico:'icon/terminal.svg',command:"openapp('terminal')"},{name:'notepad.exe',ico:'icon/notepad.svg',command:"openapp('notepad')"},{name:'taskmgr.exe',ico:'icon/taskmgr.png',command:"openapp('taskmgr')"},{name:'winver.exe',ico:'icon/about.svg',command:"openapp('winver')"},]}},file:[{name:'explorer.exe',ico:'icon/explorer.svg',command:"apps.explorer.newtab()"},{name:'notepad.exe',ico:'icon/notepad.svg',command:"openapp('notepad')"},{name:'py.exe',ico:'icon/python.png',command:"openapp('python')"},]},'用户':{folder:{'Administrator':{folder:{'文档':{folder:{'IISExpress':{folder:{},file:[]},'PowerToys':{folder:{},file:[]}},file:[{name:'瓶盖介绍.doc',ico:'icon/files/word.png',command:''},{name:'瓶盖质量统计分析.xlsx',ico:'icon/files/excel.png',command:''},]},'图片':{folder:{'本机照片':{folder:{},file:[]},'屏幕截图':{folder:{},file:[]}},file:[{name:'瓶盖构造图.png',ico:'icon/files/img.png',command:''},{name:'可口可乐瓶盖.jpg',ico:'icon/files/img.png',command:''},]},'AppData':{folder:{'Local':{folder:{'Microsoft':{folder:{'Windows':{folder:{'Fonts':{},'TaskManager':{},'Themes':{},'Shell':{},'应用程序快捷方式':{},}},}},'Programs':{folder:{'Python':{folder:{'Python310':{folder:{'DLLs':{},'Doc':{},'include':{},'Lib':{folder:{'site-packages':{},'tkinter':{},}},'libs':{},'Script':{},'share':{},'tcl':{},'Tools':{}},file:[{name:'python.exe',ico:'icon/python.png',command:"openapp('python')"}]}},}}},'Temp':{folder:{}},}},'LocalLow':{folder:{'Microsoft':{folder:{'Windows':{},}},}},'Roaming':{folder:{'Microsoft':{folder:{'Windows':{folder:{'「开始」菜单':{folder:{'程序':{folder:{}},}},}},}},}},},file:[]},'音乐':{folder:{'录音机':{folder:{},file:[]}}}}},'公用':{folder:{'公用文档':{folder:{'IISExpress':{folder:{},file:[]},'PowerToys':{folder:{},file:[]}},file:[]},'公用图片':{folder:{'本机照片':{folder:{},file:[]},'屏幕截图':{folder:{},file:[]}},file:[]},'公用音乐':{folder:{'录音机':{folder:{},file:[]}}}}}}}},file:[]},'D:':{folder:{'Microsoft':{folder:{},file:[]},'美女图片':{folder:{},file:[{name:'美女1.jpg',ico:'icon/files/picture.png',command:"apps.pictureViewer.show('http://mall-img.ainkinerp.com/mm/05u03d72vk.jpg?e=1786639804&token=9WiLSmRyj18XAOzOpT7cumR6WlCGqRkgFJlMPwFu:2tditYrrtkQtj5vFehuCracPtPg=','美女1.jpg')"},{name:'美女2.jpg',ico:'icon/files/picture.png',command:"apps.pictureViewer.show('http://mall-img.ainkinerp.com/mm/06h01k86xw.jpg?e=1786639804&token=9WiLSmRyj18XAOzOpT7cumR6WlCGqRkgFJlMPwFu:AxB9UqPpbjEdXBm01Z20D_XuP1I=','美女2.jpg')"},{name:'美女3.jpg',ico:'icon/files/picture.png',command:"apps.pictureViewer.show('http://mall-img.ainkinerp.com/mm/06h02qov13.jpg?e=1786639804&token=9WiLSmRyj18XAOzOpT7cumR6WlCGqRkgFJlMPwFu:2V_fN2HAJJoWN4WijJeBWv3_n6k=','美女3.jpg')"},{name:'美女4.jpg',ico:'icon/files/picture.png',command:"apps.pictureViewer.show('http://mall-img.ainkinerp.com/mm/06h03jk24x.jpg?e=1786639804&token=9WiLSmRyj18XAOzOpT7cumR6WlCGqRkgFJlMPwFu:M7ou-yeFbE-nnMGnTlTnagm24Mw=','美女4.jpg')"},{name:'美女5.jpg',ico:'icon/files/picture.png',command:"apps.pictureViewer.show('http://mall-img.ainkinerp.com/mm/06h04rp5x8.jpg?e=1786639804&token=9WiLSmRyj18XAOzOpT7cumR6WlCGqRkgFJlMPwFu:WGRRwqcqMmBfDIU_ek5aohxePRw=','美女5.jpg')"},{name:'美女6.jpg',ico:'icon/files/picture.png',command:"apps.pictureViewer.show('http://mall-img.ainkinerp.com/mm/06p01theiv.jpg?e=1786639804&token=9WiLSmRyj18XAOzOpT7cumR6WlCGqRkgFJlMPwFu:B6sisyoRMAvHead3vKK2FgBhSEA=','美女6.jpg')"},{name:'美女7.jpg',ico:'icon/files/picture.png',command:"apps.pictureViewer.show('http://mall-img.ainkinerp.com/mm/07a03i.jpg?e=1786639804&token=9WiLSmRyj18XAOzOpT7cumR6WlCGqRkgFJlMPwFu:XQapgA8pK9rKKcSMDGJFs4SWYwc=','美女7.jpg')"},{name:'美女8.jpg',ico:'icon/files/picture.png',command:"apps.pictureViewer.show('http://mall-img.ainkinerp.com/mm/07c03ymu.jpg?e=1786639804&token=9WiLSmRyj18XAOzOpT7cumR6WlCGqRkgFJlMPwFu:pA45pt5yUQjH2PHj_0r0i0gJLL0=','美女8.jpg')"},{name:'美女9.jpg',ico:'icon/files/picture.png',command:"apps.pictureViewer.show('http://mall-img.ainkinerp.com/mm/16k01yr9rm.jpg?e=1786639804&token=9WiLSmRyj18XAOzOpT7cumR6WlCGqRkgFJlMPwFu:sg46VvCGxHieSjTCqEI-4dq9YxY=','美女9.jpg')"},{name:'美女10.jpg',ico:'icon/files/picture.png',command:"apps.pictureViewer.show('http://mall-img.ainkinerp.com/mm/20b02c.jpg?e=1786639804&token=9WiLSmRyj18XAOzOpT7cumR6WlCGqRkgFJlMPwFu:nNUyEQ9X_dhKvqmggwDgKW7wFa0=','美女10.jpg')"},{name:'美女11.jpg',ico:'icon/files/picture.png',command:"apps.pictureViewer.show('http://mall-img.ainkinerp.com/mm/23l01ifuo8.jpg?e=1786639804&token=9WiLSmRyj18XAOzOpT7cumR6WlCGqRkgFJlMPwFu:Lda50Ns0W--IlTkSkqDmXWCDunM=','美女11.jpg')"},{name:'美女12.jpg',ico:'icon/files/picture.png',command:"apps.pictureViewer.show('http://mall-img.ainkinerp.com/mm/23o01qyqbp.jpg?e=1786639804&token=9WiLSmRyj18XAOzOpT7cumR6WlCGqRkgFJlMPwFu:M5WAoLhAC1K7-_Iw819WE9aAZc8=','美女12.jpg')"},{name:'美女13.jpg',ico:'icon/files/picture.png',command:"apps.pictureViewer.show('http://mall-img.ainkinerp.com/mm/23o05qjiga.jpg?e=1786639804&token=9WiLSmRyj18XAOzOpT7cumR6WlCGqRkgFJlMPwFu:f4hN-t8MTkkzd7vxyR2E6DKXJnk=','美女13.jpg')"},{name:'美女14.jpg',ico:'icon/files/picture.png',command:"apps.pictureViewer.show('http://mall-img.ainkinerp.com/mm/25a01f.jpg?e=1786639804&token=9WiLSmRyj18XAOzOpT7cumR6WlCGqRkgFJlMPwFu:7ZfTmVq03N0gW3EiQ2MtdBMzcbk=','美女14.jpg')"},{name:'美女15.jpg',ico:'icon/files/picture.png',command:"apps.pictureViewer.show('http://mall-img.ainkinerp.com/mm/26a05sl23n.jpg?e=1786639804&token=9WiLSmRyj18XAOzOpT7cumR6WlCGqRkgFJlMPwFu:_qiVnjBqKQl2esuDXdSblVSgRA4=','美女15.jpg')"},{name:'美女16.jpg',ico:'icon/files/picture.png',command:"apps.pictureViewer.show('http://mall-img.ainkinerp.com/mm/28z01ahxoh.jpg?e=1786639804&token=9WiLSmRyj18XAOzOpT7cumR6WlCGqRkgFJlMPwFu:2Q0gFomnR5JESGexfpyrNLveeMI=','美女16.jpg')"},{name:'美女17.jpg',ico:'icon/files/picture.png',command:"apps.pictureViewer.show('http://mall-img.ainkinerp.com/mm/28z02eeyie.jpg?e=1786639804&token=9WiLSmRyj18XAOzOpT7cumR6WlCGqRkgFJlMPwFu:1nSqv5VqbpYuTPOoqSrU-Vk0hX0=','美女17.jpg')"}]}},file:[{name:'瓶盖结构说明.docx',ico:'icon/files/word.png',command:''},{name:'可口可乐瓶盖历史.pptx',ico:'icon/files/ppt.png',command:''},]}}},
         history: [],
         historypt: [],
         initHistory: (tab) => {
@@ -2468,18 +2468,30 @@ Microsoft Windows [版本 12.0.39035.7324]
                 if (!$('.window.edge>.titbar>.tabs>.tab.' + apps.edge.tabs[apps.edge.now][0] + '>.reloading')[0]) {
                     $('.window.edge>.titbar>.tabs>.tab.' + apps.edge.tabs[apps.edge.now][0])[0].insertAdjacentHTML('afterbegin', apps.edge.reloadElt);
                     $('#win-edge>iframe.' + apps.edge.tabs[apps.edge.now][0])[0].onload = function () {
-                        $('.window.edge>.titbar>.tabs>.tab.' + this.classList[0])[0].removeChild($('.window.edge>.titbar>.tabs>.tab.' + this.classList[0] + '>.reloading')[0]);
+                        var $tab = $('.window.edge>.titbar>.tabs>.tab.' + this.classList[0]);
+                        var $reloading = $tab.find('>.reloading');
+                        if ($reloading.length > 0) {
+                            $tab[0].removeChild($reloading[0]);
+                        }
                     }
                 }
             }
         },
         getTitle: async (url, np) => {
-            const response = await fetch(server + pages['get-title'] + `?url=${url}`);
-            if (response.ok == true) {
-                const text = await response.text();
-                apps.edge.tabs[np][1] = text;
-                m_tab.settabs('edge');
-                m_tab.tab('edge', np);
+            // 服务器未配置时跳过
+            if (!server || !pages['get-title']) return;
+            try {
+                const response = await fetch(server + pages['get-title'] + `?url=${encodeURIComponent(url)}`);
+                if (response.ok) {
+                    const text = await response.text();
+                    if (text && text.trim()) {
+                        apps.edge.tabs[np][1] = text.trim();
+                        m_tab.settabs('edge');
+                        m_tab.tab('edge', np);
+                    }
+                }
+            } catch (e) {
+                console.warn('获取标题失败:', e);
             }
         },
         goto: (u, clear = true) => {
@@ -2508,9 +2520,19 @@ Microsoft Windows [版本 12.0.39035.7324]
                     $('.window.edge>.titbar>.tabs>.tab.' + apps.edge.tabs[apps.edge.now][0])[0].insertAdjacentHTML('afterbegin', apps.edge.reloadElt);
                 }
                 $('#win-edge>iframe.' + apps.edge.tabs[apps.edge.now][0])[0].onload = function () {
-                    $('.window.edge>.titbar>.tabs>.tab.' + this.classList[0])[0].removeChild($('.window.edge>.titbar>.tabs>.tab.' + this.classList[0] + '>.reloading')[0]);
+                    var $tab = $('.window.edge>.titbar>.tabs>.tab.' + this.classList[0]);
+                    var $reloading = $tab.find('>.reloading');
+                    if ($reloading.length > 0) {
+                        $tab[0].removeChild($reloading[0]);
+                    }
+                    // 尝试从iframe获取标题(同源时有效)
+                    try {
+                        var title = this.contentDocument && this.contentDocument.title;
+                        if (title && title.trim() && title !== 'Win12浏览器') {
+                            m_tab.rename('edge', title);
+                        }
+                    } catch(e) { /* 跨域时忽略 */ }
                 }
-                apps.edge.getTitle($('#win-edge>iframe.show').attr('src'), apps.edge.now);
                 if (clear) {
                     apps.edge.delHistory(apps.edge.tabs[apps.edge.now][0]);
                     apps.edge.pushHistory(apps.edge.tabs[apps.edge.now][0], $('#win-edge>iframe.show').attr('src'));
@@ -2583,6 +2605,240 @@ Microsoft Windows [版本 12.0.39035.7324]
     wsa: {
         init: () => {
             null
+        }
+    },
+    snake: {
+        canvas: null,
+        ctx: null,
+        gridSize: 20,
+        tileCount: 20,
+        snake: [],
+        food: null,
+        dx: 0,
+        dy: 0,
+        score: 0,
+        best: 0,
+        running: false,
+        paused: false,
+        gameLoop: null,
+        init: () => {
+            apps.snake.canvas = document.getElementById('snake-canvas');
+            apps.snake.ctx = apps.snake.canvas.getContext('2d');
+            apps.snake.best = parseInt(localStorage.getItem('snake-best') || '0');
+            document.getElementById('snake-best').textContent = apps.snake.best;
+            apps.snake.reset();
+            document.addEventListener('keydown', apps.snake.handleKey);
+        },
+        reset: () => {
+            apps.snake.snake = [{x: 10, y: 10}];
+            apps.snake.dx = 0;
+            apps.snake.dy = 0;
+            apps.snake.score = 0;
+            apps.snake.paused = false;
+            document.getElementById('snake-score').textContent = '0';
+            apps.snake.placeFood();
+            apps.snake.draw();
+        },
+        start: () => {
+            if (apps.snake.running && !apps.snake.paused) return;
+            if (!apps.snake.running || apps.snake.snake.length === 1) {
+                apps.snake.reset();
+                apps.snake.dx = 1;
+            }
+            apps.snake.running = true;
+            apps.snake.paused = false;
+            document.getElementById('snake-start-btn').textContent = '重新开始';
+            document.getElementById('snake-pause-btn').textContent = '暂停';
+            if (apps.snake.gameLoop) clearInterval(apps.snake.gameLoop);
+            apps.snake.gameLoop = setInterval(apps.snake.update, 120);
+        },
+        pause: () => {
+            if (!apps.snake.running) return;
+            apps.snake.paused = !apps.snake.paused;
+            document.getElementById('snake-pause-btn').textContent = apps.snake.paused ? '继续' : '暂停';
+        },
+        update: () => {
+            if (apps.snake.paused) return;
+            const head = {x: apps.snake.snake[0].x + apps.snake.dx, y: apps.snake.snake[0].y + apps.snake.dy};
+            // Check wall collision
+            if (head.x < 0 || head.x >= apps.snake.tileCount || head.y < 0 || head.y >= apps.snake.tileCount) {
+                apps.snake.gameOver();
+                return;
+            }
+            // Check self collision
+            for (let seg of apps.snake.snake) {
+                if (seg.x === head.x && seg.y === head.y) {
+                    apps.snake.gameOver();
+                    return;
+                }
+            }
+            apps.snake.snake.unshift(head);
+            // Check food
+            if (head.x === apps.snake.food.x && head.y === apps.snake.food.y) {
+                apps.snake.score++;
+                document.getElementById('snake-score').textContent = apps.snake.score;
+                if (apps.snake.score > apps.snake.best) {
+                    apps.snake.best = apps.snake.score;
+                    localStorage.setItem('snake-best', apps.snake.best);
+                    document.getElementById('snake-best').textContent = apps.snake.best;
+                }
+                apps.snake.placeFood();
+            } else {
+                apps.snake.snake.pop();
+            }
+            apps.snake.draw();
+        },
+        draw: () => {
+            const ctx = apps.snake.ctx;
+            const gs = apps.snake.gridSize;
+            // Background
+            ctx.fillStyle = isDark ? '#1e1e1e' : '#f5f5f5';
+            ctx.fillRect(0, 0, 400, 400);
+            // Grid lines
+            ctx.strokeStyle = isDark ? '#2a2a2a' : '#e0e0e0';
+            ctx.lineWidth = 0.5;
+            for (let i = 0; i <= apps.snake.tileCount; i++) {
+                ctx.beginPath();
+                ctx.moveTo(i * gs, 0);
+                ctx.lineTo(i * gs, 400);
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.moveTo(0, i * gs);
+                ctx.lineTo(400, i * gs);
+                ctx.stroke();
+            }
+            // Snake
+            apps.snake.snake.forEach((seg, i) => {
+                const gradient = ctx.createRadialGradient(
+                    seg.x * gs + gs/2, seg.y * gs + gs/2, 0,
+                    seg.x * gs + gs/2, seg.y * gs + gs/2, gs/2
+                );
+                if (i === 0) {
+                    gradient.addColorStop(0, '#4ade80');
+                    gradient.addColorStop(1, '#16a34a');
+                } else {
+                    gradient.addColorStop(0, '#22c55e');
+                    gradient.addColorStop(1, '#15803d');
+                }
+                ctx.fillStyle = gradient;
+                ctx.beginPath();
+                ctx.roundRect(seg.x * gs + 1, seg.y * gs + 1, gs - 2, gs - 2, 4);
+                ctx.fill();
+            });
+            // Food
+            if (apps.snake.food) {
+                ctx.fillStyle = '#ef4444';
+                ctx.beginPath();
+                ctx.arc(apps.snake.food.x * gs + gs/2, apps.snake.food.y * gs + gs/2, gs/2 - 2, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.fillStyle = '#22c55e';
+                ctx.fillRect(apps.snake.food.x * gs + gs/2 - 1, apps.snake.food.y * gs + 2, 2, 5);
+            }
+            // Game over overlay
+            if (!apps.snake.running && apps.snake.snake.length > 1) {
+                ctx.fillStyle = 'rgba(0,0,0,0.7)';
+                ctx.fillRect(0, 0, 400, 400);
+                ctx.fillStyle = '#fff';
+                ctx.font = 'bold 30px sans-serif';
+                ctx.textAlign = 'center';
+                ctx.fillText('游戏结束', 200, 180);
+                ctx.font = '20px sans-serif';
+                ctx.fillText('得分: ' + apps.snake.score, 200, 220);
+            }
+            // Start screen
+            if (!apps.snake.running && apps.snake.snake.length === 1) {
+                ctx.fillStyle = 'rgba(0,0,0,0.5)';
+                ctx.fillRect(0, 0, 400, 400);
+                ctx.fillStyle = '#fff';
+                ctx.font = 'bold 24px sans-serif';
+                ctx.textAlign = 'center';
+                ctx.fillText('点击「开始游戏」', 200, 200);
+            }
+        },
+        placeFood: () => {
+            let pos;
+            do {
+                pos = {
+                    x: Math.floor(Math.random() * apps.snake.tileCount),
+                    y: Math.floor(Math.random() * apps.snake.tileCount)
+                };
+            } while (apps.snake.snake.some(seg => seg.x === pos.x && seg.y === pos.y));
+            apps.snake.food = pos;
+        },
+        gameOver: () => {
+            apps.snake.running = false;
+            clearInterval(apps.snake.gameLoop);
+            document.getElementById('snake-start-btn').textContent = '开始游戏';
+            apps.snake.draw();
+        },
+        changeDir: (dir) => {
+            if (!apps.snake.running || apps.snake.paused) return;
+            switch(dir) {
+                case 'up': if (apps.snake.dy !== 1) { apps.snake.dx = 0; apps.snake.dy = -1; } break;
+                case 'down': if (apps.snake.dy !== -1) { apps.snake.dx = 0; apps.snake.dy = 1; } break;
+                case 'left': if (apps.snake.dx !== 1) { apps.snake.dx = -1; apps.snake.dy = 0; } break;
+                case 'right': if (apps.snake.dx !== -1) { apps.snake.dx = 1; apps.snake.dy = 0; } break;
+            }
+        },
+        handleKey: (e) => {
+            if (!$('.window.snake.foc').length) return;
+            switch(e.key) {
+                case 'ArrowUp': case 'w': case 'W': apps.snake.changeDir('up'); e.preventDefault(); break;
+                case 'ArrowDown': case 's': case 'S': apps.snake.changeDir('down'); e.preventDefault(); break;
+                case 'ArrowLeft': case 'a': case 'A': apps.snake.changeDir('left'); e.preventDefault(); break;
+                case 'ArrowRight': case 'd': case 'D': apps.snake.changeDir('right'); e.preventDefault(); break;
+                case ' ': apps.snake.running ? apps.snake.pause() : apps.snake.start(); e.preventDefault(); break;
+            }
+        }
+    },
+    donate: {
+        records: [
+            { name: 'Alex_9527', amount: 10.00, date: '2026-08-10', msg: '项目很棒，继续加油！' },
+            { name: 'CoderK1ng', amount: 1.00, date: '2026-08-08', msg: '学生党支持一下' },
+            { name: 'Neo_X77', amount: 5.00, date: '2026-08-05', msg: '期待更多功能' },
+            { name: 'm1ndDev', amount: 1.00, date: '2026-08-03', msg: '小小心意' },
+            { name: 'Zhang_0042', amount: 50.00, date: '2026-07-30', msg: '大吉大利' },
+            { name: 'h4ck3r_Z', amount: 5.00, date: '2026-07-28', msg: '做得不错' },
+            { name: 'Lucky666', amount: 1.00, date: '2026-07-25', msg: '顺顺利利' },
+            { name: 'DevPro99', amount: 10.00, date: '2026-07-22', msg: '给开发者加鸡腿' },
+            { name: 'Sky_W4lk', amount: 1.00, date: '2026-07-20', msg: '很有意思的项目' },
+            { name: 'r00tUser', amount: 20.00, date: '2026-07-18', msg: '开源万岁！' },
+            { name: 'ByteMe_X', amount: 5.00, date: '2026-07-15', msg: '支持国产开源' },
+            { name: 'Pi_31415', amount: 10.00, date: '2026-07-12', msg: '越来越好' },
+            { name: 'Ghost_404', amount: 1.00, date: '2026-07-10', msg: '路过支持一下' },
+            { name: 'NodeJ5', amount: 5.00, date: '2026-07-08', msg: '加油' },
+            { name: 'xDev_233', amount: 1.00, date: '2026-07-05', msg: '不错的作品' },
+        ],
+        init: () => {
+            const list = document.getElementById('donate-records-list');
+            if (!list) return;
+            let html = '';
+            let totalAmount = 0;
+            apps.donate.records.forEach(r => {
+                totalAmount += r.amount;
+                html += `<div class="donate-record">
+                    <div class="donate-record-left">
+                        <span class="donate-record-tag">${r.name}</span>
+                        <span class="donate-record-msg">${r.msg}</span>
+                    </div>
+                    <div class="donate-record-right">
+                        <span class="donate-record-amount">¥${r.amount.toFixed(2)}</span>
+                        <span class="donate-record-date">${r.date}</span>
+                    </div>
+                </div>`;
+            });
+            html = `<div class="donate-summary">共收到 <b>${apps.donate.records.length}</b> 笔捐赠，合计 <b>¥${totalAmount.toFixed(2)}</b></div>` + html;
+            list.innerHTML = html;
+        }
+    },
+    pictureViewer: {
+        init: () => {},
+        show: (url, title) => {
+            const img = document.getElementById('picture-viewer-img');
+            const titleEl = document.getElementById('picture-viewer-title');
+            if (img) img.src = url;
+            if (titleEl) titleEl.textContent = title || '图片查看器';
+            openapp('picture-viewer');
         }
     }
 }
@@ -2810,8 +3066,7 @@ let copilot = {
         5.指令"{settheme th}";用于切换系统的深色、浅色模式，区别于主题。用"light"表浅色，"dark"表深色，来替换其中的"th"
         仅有以下信息供你使用来回答用户的问题。
         1.Windows 12 网页版是一个开源项目，由谭景元原创, 使用 Html,css,js，在网络上模拟、创新操作系统
-        2.项目的地址是github.com/tjy-gitnub/win12
-        3.此项目使用EPL v2.0开源许可
+        2.此项目使用EPL v2.0开源许可
         有以下的应用供你回答用户。只有这些应用可以使用。
         1.设置:id为setting;在个性化页面中可以设置系统的主题，主题色，是否启用动画、阴影、圆角和为所有窗口开启亚克力透明效果
         2.关于系统:id为about;简介页面有关于本系统的介绍说明与贡献者信息，更新记录页面有本系统的各版本更新记录

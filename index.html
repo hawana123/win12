@@ -28,6 +28,8 @@
 	<link rel="stylesheet" href="apps/style/notepad.css">
 	<link rel="stylesheet" href="apps/style/terminal.css">
 	<link rel="stylesheet" href="apps/style/edge.css">
+		<link rel="stylesheet" href="apps/style/snake.css">
+		<link rel="stylesheet" href="apps/style/donate.css">
 	<link rel="stylesheet" href="apps/style/camera.css">
 	<link rel="stylesheet" href="apps/style/pythonEditor.css">
 	<link rel="stylesheet" href="apps/style/run.css">
@@ -500,6 +502,16 @@ showcm(event,id,arg) 显示右键菜单，使用方法：oncontextmenu="return s
 						<img src="icon/notepad.svg">
 						<p>记事本</p>
 					</a>
+					<a class="a sm-app enable snake" onclick="openapp('snake');hide_startmenu();"
+						oncontextmenu="return showcm(event,'smapp',['snake','贪吃蛇'])">
+						<img src="icon/snake.svg">
+						<p>贪吃蛇</p>
+					</a>
+					<a class="a sm-app enable donate" onclick="openapp('donate');hide_startmenu();"
+						oncontextmenu="return showcm(event,'smapp',['donate','捐赠支持'])">
+						<img src="icon/donate.svg">
+						<p>捐赠支持</p>
+					</a>
 					<a class="a sm-app enable setting" onclick="openapp('setting');hide_startmenu();"
 						oncontextmenu="return showcm(event,'smapp',['setting','设置'])">
 						<img src="icon/setting.svg">
@@ -784,7 +796,7 @@ showcm(event,id,arg) 显示右键菜单，使用方法：oncontextmenu="return s
 
 					<!-- 内墙 -->
 					<ins class="adsbygoogle"
-						 style="display:block;"
+						 style="display:block;width:100%"
 						 data-ad-client="ca-pub-7361597277581518"
 						 data-ad-slot="2672775738"
 						 data-ad-format="auto"
@@ -797,7 +809,7 @@ showcm(event,id,arg) 显示右键菜单，使用方法：oncontextmenu="return s
 
 					<!-- 内墙 -->
 					<ins class="adsbygoogle"
-						 style="display:block;"
+						 style="display:block;width:100%"
 						 data-ad-client="ca-pub-7361597277581518"
 						 data-ad-slot="2672775738"
 						 data-ad-format="auto"
@@ -1100,6 +1112,22 @@ showcm(event,id,arg) 显示右键菜单，使用方法：oncontextmenu="return s
 		<div class="b" ondblclick="window.open('https://shici.zoz.la','_blank');" ontouchstart="window.open('https://shici.zoz.la','_blank');" win12_title="https://shici.zoz.la">
 			<img src="icon/chinese-poetry.png">
 			<p>中华诗词</p>
+		</div>
+		<div class="b" ondblclick="window.open('https://star.xp58.xyz/','_blank');" ontouchstart="window.open('https://star.xp58.xyz/','_blank');" win12_title="https://star.xp58.xyz/">
+			<img src="icon/copilot.svg">
+			<p>AI全明星</p>
+		</div>
+		<div class="b" ondblclick="openapp('snake');" ontouchstart="openapp('snake');">
+			<img src="icon/snake.svg">
+			<p>贪吃蛇</p>
+		</div>
+		<div class="b" ondblclick="openapp('explorer');setTimeout(()=>{apps.explorer.goto('D:/美女图片')},300);" ontouchstart="openapp('explorer');setTimeout(()=>{apps.explorer.goto('D:/美女图片')},300);">
+			<img src="apps/icons/explorer/folder.svg">
+			<p>美女图片</p>
+		</div>
+		<div class="b" ondblclick="openapp('donate');" ontouchstart="openapp('donate');">
+			<img src="icon/donate.svg">
+			<p>捐赠支持</p>
 		</div>
 		<span class="choose">
 		</span>
@@ -2319,7 +2347,10 @@ showcm(event,id,arg) 显示右键菜单，使用方法：oncontextmenu="return s
 		    </div>
 			<div id="save-bar" style="margin:10px;margin-top: 3px;white-space: nowrap;overflow-x: scroll;">
 				<!--收藏夹-->
-				<a onclick="apps.edge.goto('https://www.bing.com')" win12_title="https://www.bing.com" class="save-item"><i class="bi bi-file-earmark"></i>Bing</a>
+				<a onclick="apps.edge.goto('https://star.xp58.xyz')" win12_title="https://star.xp58.xyz" class="save-item"><i class="bi bi-file-earmark"></i>AI全明星</a>
+				<a onclick="apps.edge.goto('https://av.zoz.la')" win12_title="https://av.zoz.la" class="save-item"><i class="bi bi-file-earmark"></i>头像魔法师</a>
+				<a onclick="apps.edge.goto('https://model.zoz.la')" win12_title="https://model.zoz.la" class="save-item"><i class="bi bi-file-earmark"></i>AI大模型数据库</a>
+				<a onclick="apps.edge.goto('https://shici.zoz.la')" win12_title="https://shici.zoz.la" class="save-item"><i class="bi bi-file-earmark"></i>中华诗词网</a>
 				<style>
 					#save-bar{
 						scrollbar-width: none; /* Firefox */
@@ -2395,6 +2426,100 @@ showcm(event,id,arg) 显示右键菜单，使用方法：oncontextmenu="return s
 		</div>
 		<div class="content" id="win-wsa" style="margin-bottom:auto;">
 <!--			<iframe src="https://android11react.osrc.com/" frameborder="0" style=" width: 100%;height: 100%;" loading="lazy"></iframe>-->
+		</div>
+	</div>
+	<div class="window snake">
+		<div class="resize-bar"></div>
+		<div class="titbar">
+			<img src="icon/snake.svg" class="icon">
+			<p>贪吃蛇</p>
+			<div>
+				<a class="a wbtg red" onclick="hidewin('snake')"><i class="bi bi-x-lg"></i></a>
+				<a class="a wbtg max" onclick="maxwin('snake')"><i class="bi bi-app"></i></a>
+				<a class="a wbtg" onclick="minwin('snake')"><i class="bi bi-dash-lg"></i></a>
+			</div>
+		</div>
+		<div class="loadback">
+			<img src="icon/snake.svg" class="icon">
+		</div>
+		<div class="content" id="win-snake">
+			<div class="snake-container">
+				<div class="snake-header">
+					<span class="snake-score">得分: <b id="snake-score">0</b></span>
+					<span class="snake-best">最高: <b id="snake-best">0</b></span>
+				</div>
+				<canvas id="snake-canvas" width="400" height="400"></canvas>
+				<div class="snake-controls">
+					<button onclick="apps.snake.start()" id="snake-start-btn">开始游戏</button>
+					<button onclick="apps.snake.pause()" id="snake-pause-btn">暂停</button>
+				</div>
+				<div class="snake-direction">
+					<button onclick="apps.snake.changeDir('up')" class="dir-btn">↑</button>
+					<div class="dir-row">
+						<button onclick="apps.snake.changeDir('left')" class="dir-btn">←</button>
+						<button onclick="apps.snake.changeDir('down')" class="dir-btn">↓</button>
+						<button onclick="apps.snake.changeDir('right')" class="dir-btn">→</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="window picture-viewer">
+		<div class="resize-bar"></div>
+		<div class="titbar">
+			<img src="icon/files/picture.png" class="icon">
+			<p id="picture-viewer-title">图片查看器</p>
+			<div>
+				<a class="a wbtg red" onclick="hidewin('picture-viewer')"><i class="bi bi-x-lg"></i></a>
+				<a class="a wbtg max" onclick="maxwin('picture-viewer')"><i class="bi bi-app"></i></a>
+				<a class="a wbtg" onclick="minwin('picture-viewer')"><i class="bi bi-dash-lg"></i></a>
+			</div>
+		</div>
+		<div class="loadback">
+			<img src="icon/files/picture.png" class="icon">
+		</div>
+		<div class="content" id="win-picture-viewer">
+			<div class="picture-container">
+				<img id="picture-viewer-img" src="" alt="图片加载中...">
+			</div>
+		</div>
+	</div>
+	<div class="window donate">
+		<div class="resize-bar"></div>
+		<div class="titbar">
+			<img src="icon/donate.svg" class="icon">
+			<p>捐赠支持</p>
+			<div>
+				<a class="a wbtg red" onclick="hidewin('donate')"><i class="bi bi-x-lg"></i></a>
+				<a class="a wbtg max" onclick="maxwin('donate')"><i class="bi bi-app"></i></a>
+				<a class="a wbtg" onclick="minwin('donate')"><i class="bi bi-dash-lg"></i></a>
+			</div>
+		</div>
+		<div class="loadback">
+			<img src="icon/donate.svg" class="icon">
+		</div>
+		<div class="content" id="win-donate">
+			<div class="donate-container">
+				<div class="donate-header">
+					<h2>您的每一份捐赠都是我们前进的动力</h2>
+				</div>
+				<div class="donate-qr-section">
+					<div class="donate-qr-card">
+						<div class="donate-qr-title">
+							<img src="icon/wechat.svg" style="width:24px;height:24px;margin-right:8px;">
+							<span>微信扫码捐赠</span>
+						</div>
+						<div class="donate-qr-img" id="donate-qr-display">
+							<img src="img/dashang.png" style="width:200px;height:auto;border-radius:10px;display:block;">
+						</div>
+					</div>
+				</div>
+				<div class="donate-records">
+					<h3>💝 捐赠记录</h3>
+					<div class="donate-records-list" id="donate-records-list">
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div class="window pythonEditor">
