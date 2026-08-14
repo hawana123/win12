@@ -2607,188 +2607,106 @@ Microsoft Windows [版本 12.0.39035.7324]
             null
         }
     },
-    snake: {
-        canvas: null,
-        ctx: null,
-        gridSize: 20,
-        tileCount: 20,
-        snake: [],
-        food: null,
-        dx: 0,
-        dy: 0,
+    game2048: {
+        grid: [],
         score: 0,
         best: 0,
-        running: false,
-        paused: false,
-        gameLoop: null,
+        size: 4,
+        colors: {0:'#cdc1b4',2:'#eee4da',4:'#ede0c8',8:'#f2b179',16:'#f59563',32:'#f67c5f',64:'#f65e3b',128:'#edcf72',256:'#edcc61',512:'#edc850',1024:'#edc53f',2048:'#edc22e'},
         init: () => {
-            apps.snake.canvas = document.getElementById('snake-canvas');
-            apps.snake.ctx = apps.snake.canvas.getContext('2d');
-            apps.snake.best = parseInt(localStorage.getItem('snake-best') || '0');
-            document.getElementById('snake-best').textContent = apps.snake.best;
-            apps.snake.reset();
-            document.addEventListener('keydown', apps.snake.handleKey);
+            apps.game2048.best = parseInt(localStorage.getItem('game2048-best') || '0');
+            document.getElementById('game2048-best').textContent = apps.game2048.best;
+            apps.game2048.reset();
+            document.addEventListener('keydown', apps.game2048.handleKey);
+            // Mouse swipe support
+            const board = document.getElementById('game2048-board');
+            if (board) {
+                let startX, startY;
+                board.addEventListener('mousedown', e => { startX = e.clientX; startY = e.clientY; });
+                board.addEventListener('mouseup', e => {
+                    const dx = e.clientX - startX, dy = e.clientY - startY;
+                    if (Math.abs(dx) < 20 && Math.abs(dy) < 20) return;
+                    if (Math.abs(dx) > Math.abs(dy)) apps.game2048.move(dx > 0 ? 'right' : 'left');
+                    else apps.game2048.move(dy > 0 ? 'down' : 'up');
+                });
+            }
         },
         reset: () => {
-            apps.snake.snake = [{x: 10, y: 10}];
-            apps.snake.dx = 0;
-            apps.snake.dy = 0;
-            apps.snake.score = 0;
-            apps.snake.paused = false;
-            document.getElementById('snake-score').textContent = '0';
-            apps.snake.placeFood();
-            apps.snake.draw();
+            apps.game2048.grid = Array(apps.game2048.size).fill(null).map(() => Array(apps.game2048.size).fill(0));
+            apps.game2048.score = 0;
+            document.getElementById('game2048-score').textContent = '0';
+            apps.game2048.addRandom();
+            apps.game2048.addRandom();
+            apps.game2048.render();
         },
-        start: () => {
-            if (apps.snake.running && !apps.snake.paused) return;
-            if (!apps.snake.running || apps.snake.snake.length === 1) {
-                apps.snake.reset();
-                apps.snake.dx = 1;
-            }
-            apps.snake.running = true;
-            apps.snake.paused = false;
-            document.getElementById('snake-start-btn').textContent = '重新开始';
-            document.getElementById('snake-pause-btn').textContent = '暂停';
-            if (apps.snake.gameLoop) clearInterval(apps.snake.gameLoop);
-            apps.snake.gameLoop = setInterval(apps.snake.update, 120);
+        addRandom: () => {
+            const empty = [];
+            for (let r = 0; r < apps.game2048.size; r++)
+                for (let c = 0; c < apps.game2048.size; c++)
+                    if (apps.game2048.grid[r][c] === 0) empty.push({r, c});
+            if (empty.length === 0) return;
+            const cell = empty[Math.floor(Math.random() * empty.length)];
+            apps.game2048.grid[cell.r][cell.c] = Math.random() < 0.9 ? 2 : 4;
         },
-        pause: () => {
-            if (!apps.snake.running) return;
-            apps.snake.paused = !apps.snake.paused;
-            document.getElementById('snake-pause-btn').textContent = apps.snake.paused ? '继续' : '暂停';
-        },
-        update: () => {
-            if (apps.snake.paused) return;
-            const head = {x: apps.snake.snake[0].x + apps.snake.dx, y: apps.snake.snake[0].y + apps.snake.dy};
-            // Check wall collision
-            if (head.x < 0 || head.x >= apps.snake.tileCount || head.y < 0 || head.y >= apps.snake.tileCount) {
-                apps.snake.gameOver();
-                return;
-            }
-            // Check self collision
-            for (let seg of apps.snake.snake) {
-                if (seg.x === head.x && seg.y === head.y) {
-                    apps.snake.gameOver();
-                    return;
+        render: () => {
+            const board = document.getElementById('game2048-board');
+            if (!board) return;
+            let html = '';
+            for (let r = 0; r < apps.game2048.size; r++) {
+                for (let c = 0; c < apps.game2048.size; c++) {
+                    const v = apps.game2048.grid[r][c];
+                    const color = apps.game2048.colors[v] || '#3c3a32';
+                    const textColor = v <= 4 ? '#776e65' : '#f9f6f2';
+                    const fontSize = v >= 1024 ? '22px' : v >= 128 ? '28px' : '34px';
+                    html += `<div class="tile" style="background:${color};color:${textColor};font-size:${fontSize}">${v || ''}</div>`;
                 }
             }
-            apps.snake.snake.unshift(head);
-            // Check food
-            if (head.x === apps.snake.food.x && head.y === apps.snake.food.y) {
-                apps.snake.score++;
-                document.getElementById('snake-score').textContent = apps.snake.score;
-                if (apps.snake.score > apps.snake.best) {
-                    apps.snake.best = apps.snake.score;
-                    localStorage.setItem('snake-best', apps.snake.best);
-                    document.getElementById('snake-best').textContent = apps.snake.best;
+            board.innerHTML = html;
+        },
+        move: (dir) => {
+            const g = apps.game2048.grid;
+            const n = apps.game2048.size;
+            let moved = false;
+            const rotate = () => { const ng = Array(n).fill(null).map(() => Array(n).fill(0)); for (let r = 0; r < n; r++) for (let c = 0; c < n; c++) ng[c][n-1-r] = g[r][c]; for (let r = 0; r < n; r++) for (let c = 0; c < n; c++) g[r][c] = ng[r][c]; };
+            const slideLeft = () => {
+                for (let r = 0; r < n; r++) {
+                    let row = g[r].filter(v => v !== 0);
+                    for (let i = 0; i < row.length - 1; i++) {
+                        if (row[i] === row[i+1]) { row[i] *= 2; apps.game2048.score += row[i]; row.splice(i+1, 1); }
+                    }
+                    while (row.length < n) row.push(0);
+                    if (g[r].join(',') !== row.join(',')) moved = true;
+                    g[r] = row;
                 }
-                apps.snake.placeFood();
-            } else {
-                apps.snake.snake.pop();
-            }
-            apps.snake.draw();
-        },
-        draw: () => {
-            const ctx = apps.snake.ctx;
-            const gs = apps.snake.gridSize;
-            // Background
-            ctx.fillStyle = isDark ? '#1e1e1e' : '#f5f5f5';
-            ctx.fillRect(0, 0, 400, 400);
-            // Grid lines
-            ctx.strokeStyle = isDark ? '#2a2a2a' : '#e0e0e0';
-            ctx.lineWidth = 0.5;
-            for (let i = 0; i <= apps.snake.tileCount; i++) {
-                ctx.beginPath();
-                ctx.moveTo(i * gs, 0);
-                ctx.lineTo(i * gs, 400);
-                ctx.stroke();
-                ctx.beginPath();
-                ctx.moveTo(0, i * gs);
-                ctx.lineTo(400, i * gs);
-                ctx.stroke();
-            }
-            // Snake
-            apps.snake.snake.forEach((seg, i) => {
-                const gradient = ctx.createRadialGradient(
-                    seg.x * gs + gs/2, seg.y * gs + gs/2, 0,
-                    seg.x * gs + gs/2, seg.y * gs + gs/2, gs/2
-                );
-                if (i === 0) {
-                    gradient.addColorStop(0, '#4ade80');
-                    gradient.addColorStop(1, '#16a34a');
-                } else {
-                    gradient.addColorStop(0, '#22c55e');
-                    gradient.addColorStop(1, '#15803d');
+            };
+            const rotations = {left: 0, up: 1, right: 2, down: 3};
+            for (let i = 0; i < rotations[dir]; i++) rotate();
+            slideLeft();
+            for (let i = 0; i < (4 - rotations[dir]) % 4; i++) rotate();
+            if (moved) {
+                apps.game2048.addRandom();
+                document.getElementById('game2048-score').textContent = apps.game2048.score;
+                if (apps.game2048.score > apps.game2048.best) {
+                    apps.game2048.best = apps.game2048.score;
+                    localStorage.setItem('game2048-best', apps.game2048.best);
+                    document.getElementById('game2048-best').textContent = apps.game2048.best;
                 }
-                ctx.fillStyle = gradient;
-                ctx.beginPath();
-                ctx.roundRect(seg.x * gs + 1, seg.y * gs + 1, gs - 2, gs - 2, 4);
-                ctx.fill();
-            });
-            // Food
-            if (apps.snake.food) {
-                ctx.fillStyle = '#ef4444';
-                ctx.beginPath();
-                ctx.arc(apps.snake.food.x * gs + gs/2, apps.snake.food.y * gs + gs/2, gs/2 - 2, 0, Math.PI * 2);
-                ctx.fill();
-                ctx.fillStyle = '#22c55e';
-                ctx.fillRect(apps.snake.food.x * gs + gs/2 - 1, apps.snake.food.y * gs + 2, 2, 5);
-            }
-            // Game over overlay
-            if (!apps.snake.running && apps.snake.snake.length > 1) {
-                ctx.fillStyle = 'rgba(0,0,0,0.7)';
-                ctx.fillRect(0, 0, 400, 400);
-                ctx.fillStyle = '#fff';
-                ctx.font = 'bold 30px sans-serif';
-                ctx.textAlign = 'center';
-                ctx.fillText('游戏结束', 200, 180);
-                ctx.font = '20px sans-serif';
-                ctx.fillText('得分: ' + apps.snake.score, 200, 220);
-            }
-            // Start screen
-            if (!apps.snake.running && apps.snake.snake.length === 1) {
-                ctx.fillStyle = 'rgba(0,0,0,0.5)';
-                ctx.fillRect(0, 0, 400, 400);
-                ctx.fillStyle = '#fff';
-                ctx.font = 'bold 24px sans-serif';
-                ctx.textAlign = 'center';
-                ctx.fillText('点击「开始游戏」', 200, 200);
-            }
-        },
-        placeFood: () => {
-            let pos;
-            do {
-                pos = {
-                    x: Math.floor(Math.random() * apps.snake.tileCount),
-                    y: Math.floor(Math.random() * apps.snake.tileCount)
-                };
-            } while (apps.snake.snake.some(seg => seg.x === pos.x && seg.y === pos.y));
-            apps.snake.food = pos;
-        },
-        gameOver: () => {
-            apps.snake.running = false;
-            clearInterval(apps.snake.gameLoop);
-            document.getElementById('snake-start-btn').textContent = '开始游戏';
-            apps.snake.draw();
-        },
-        changeDir: (dir) => {
-            if (!apps.snake.running || apps.snake.paused) return;
-            switch(dir) {
-                case 'up': if (apps.snake.dy !== 1) { apps.snake.dx = 0; apps.snake.dy = -1; } break;
-                case 'down': if (apps.snake.dy !== -1) { apps.snake.dx = 0; apps.snake.dy = 1; } break;
-                case 'left': if (apps.snake.dx !== 1) { apps.snake.dx = -1; apps.snake.dy = 0; } break;
-                case 'right': if (apps.snake.dx !== -1) { apps.snake.dx = 1; apps.snake.dy = 0; } break;
+                apps.game2048.render();
+                // Check game over
+                let canMove = false;
+                for (let r = 0; r < n && !canMove; r++)
+                    for (let c = 0; c < n && !canMove; c++) {
+                        if (g[r][c] === 0) canMove = true;
+                        if (c < n-1 && g[r][c] === g[r][c+1]) canMove = true;
+                        if (r < n-1 && g[r][c] === g[r+1][c]) canMove = true;
+                    }
+                if (!canMove) setTimeout(() => alert('游戏结束！得分: ' + apps.game2048.score), 200);
             }
         },
         handleKey: (e) => {
-            if (!$('.window.snake.foc').length) return;
-            switch(e.key) {
-                case 'ArrowUp': case 'w': case 'W': apps.snake.changeDir('up'); e.preventDefault(); break;
-                case 'ArrowDown': case 's': case 'S': apps.snake.changeDir('down'); e.preventDefault(); break;
-                case 'ArrowLeft': case 'a': case 'A': apps.snake.changeDir('left'); e.preventDefault(); break;
-                case 'ArrowRight': case 'd': case 'D': apps.snake.changeDir('right'); e.preventDefault(); break;
-                case ' ': apps.snake.running ? apps.snake.pause() : apps.snake.start(); e.preventDefault(); break;
-            }
+            if (!$('.window.game2048.foc').length) return;
+            const map = {ArrowUp:'up',ArrowDown:'down',ArrowLeft:'left',ArrowRight:'right',w:'up',s:'down',a:'left',d:'right'};
+            if (map[e.key]) { apps.game2048.move(map[e.key]); e.preventDefault(); }
         }
     },
     donate: {
@@ -3199,6 +3117,7 @@ let icon = {
     vscode: 'vscode.png',
     // python: 'python.png',
     winver: 'about.svg',
+    game2048: '2048.svg',
     // run: 'run.png',
     // whiteboard: 'whiteboard.png',
     taskmgr: 'taskmgr.png'

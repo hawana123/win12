@@ -28,7 +28,7 @@
 	<link rel="stylesheet" href="apps/style/notepad.css">
 	<link rel="stylesheet" href="apps/style/terminal.css">
 	<link rel="stylesheet" href="apps/style/edge.css">
-		<link rel="stylesheet" href="apps/style/snake.css">
+			<link rel="stylesheet" href="apps/style/2048.css">
 		<link rel="stylesheet" href="apps/style/donate.css">
 	<link rel="stylesheet" href="apps/style/camera.css">
 	<link rel="stylesheet" href="apps/style/pythonEditor.css">
@@ -502,10 +502,10 @@ showcm(event,id,arg) 显示右键菜单，使用方法：oncontextmenu="return s
 						<img src="icon/notepad.svg">
 						<p>记事本</p>
 					</a>
-					<a class="a sm-app enable snake" onclick="openapp('snake');hide_startmenu();"
-						oncontextmenu="return showcm(event,'smapp',['snake','贪吃蛇'])">
-						<img src="icon/snake.svg">
-						<p>贪吃蛇</p>
+					<a class="a sm-app enable game2048" onclick="openapp('game2048');hide_startmenu();"
+						oncontextmenu="return showcm(event,'smapp',['game2048','2048'])">
+						<img src="icon/2048.svg">
+						<p>2048</p>
 					</a>
 					<a class="a sm-app enable donate" onclick="openapp('donate');hide_startmenu();"
 						oncontextmenu="return showcm(event,'smapp',['donate','捐赠支持'])">
@@ -1117,9 +1117,9 @@ showcm(event,id,arg) 显示右键菜单，使用方法：oncontextmenu="return s
 			<img src="icon/copilot.svg">
 			<p>AI全明星</p>
 		</div>
-		<div class="b" ondblclick="openapp('snake');" ontouchstart="openapp('snake');">
-			<img src="icon/snake.svg">
-			<p>贪吃蛇</p>
+		<div class="b" ondblclick="openapp('game2048');" ontouchstart="openapp('game2048');">
+			<img src="icon/2048.svg">
+			<p>2048</p>
 		</div>
 		<div class="b" ondblclick="openapp('explorer');setTimeout(()=>{apps.explorer.goto('D:/美女图片')},300);" ontouchstart="openapp('explorer');setTimeout(()=>{apps.explorer.goto('D:/美女图片')},300);">
 			<img src="apps/icons/explorer/folder.svg">
@@ -2428,37 +2428,39 @@ showcm(event,id,arg) 显示右键菜单，使用方法：oncontextmenu="return s
 <!--			<iframe src="https://android11react.osrc.com/" frameborder="0" style=" width: 100%;height: 100%;" loading="lazy"></iframe>-->
 		</div>
 	</div>
-	<div class="window snake">
+	<div class="window game2048">
 		<div class="resize-bar"></div>
 		<div class="titbar">
-			<img src="icon/snake.svg" class="icon">
-			<p>贪吃蛇</p>
+			<img src="icon/2048.svg" class="icon">
+			<p>2048</p>
 			<div>
-				<a class="a wbtg red" onclick="hidewin('snake')"><i class="bi bi-x-lg"></i></a>
-				<a class="a wbtg max" onclick="maxwin('snake')"><i class="bi bi-app"></i></a>
-				<a class="a wbtg" onclick="minwin('snake')"><i class="bi bi-dash-lg"></i></a>
+				<a class="a wbtg red" onclick="hidewin('game2048')"><i class="bi bi-x-lg"></i></a>
+				<a class="a wbtg max" onclick="maxwin('game2048')"><i class="bi bi-app"></i></a>
+				<a class="a wbtg" onclick="minwin('game2048')"><i class="bi bi-dash-lg"></i></a>
 			</div>
 		</div>
 		<div class="loadback">
-			<img src="icon/snake.svg" class="icon">
+			<img src="icon/2048.svg" class="icon">
 		</div>
-		<div class="content" id="win-snake">
-			<div class="snake-container">
-				<div class="snake-header">
-					<span class="snake-score">得分: <b id="snake-score">0</b></span>
-					<span class="snake-best">最高: <b id="snake-best">0</b></span>
+		<div class="content" id="win-game2048">
+			<div class="game2048-container">
+				<div class="game2048-header">
+					<div class="game2048-title">2048</div>
+					<div class="game2048-scores">
+						<div class="game2048-score-box"><span class="label">得分</span><b id="game2048-score">0</b></div>
+						<div class="game2048-score-box"><span class="label">最高</span><b id="game2048-best">0</b></div>
+					</div>
 				</div>
-				<canvas id="snake-canvas" width="400" height="400"></canvas>
-				<div class="snake-controls">
-					<button onclick="apps.snake.start()" id="snake-start-btn">开始游戏</button>
-					<button onclick="apps.snake.pause()" id="snake-pause-btn">暂停</button>
+				<div class="game2048-board" id="game2048-board"></div>
+				<div class="game2048-controls">
+					<button onclick="apps.game2048.reset()" class="game2048-btn">新游戏</button>
 				</div>
-				<div class="snake-direction">
-					<button onclick="apps.snake.changeDir('up')" class="dir-btn">↑</button>
+				<div class="game2048-touch">
+					<button onclick="apps.game2048.move('up')" class="dir-btn">↑</button>
 					<div class="dir-row">
-						<button onclick="apps.snake.changeDir('left')" class="dir-btn">←</button>
-						<button onclick="apps.snake.changeDir('down')" class="dir-btn">↓</button>
-						<button onclick="apps.snake.changeDir('right')" class="dir-btn">→</button>
+						<button onclick="apps.game2048.move('left')" class="dir-btn">←</button>
+						<button onclick="apps.game2048.move('down')" class="dir-btn">↓</button>
+						<button onclick="apps.game2048.move('right')" class="dir-btn">→</button>
 					</div>
 				</div>
 			</div>
