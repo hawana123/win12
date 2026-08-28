@@ -3937,6 +3937,10 @@ function setIcon() {
         <img src="icon/game-center.svg">
         <p>游戏中心</p>
     </div>
+    <div class="b" ondblclick="window.open('https://star.xp58.xyz','_blank');" ontouchstart="window.open('https://star.xp58.xyz','_blank');" win12_title="https://star.xp58.xyz">
+        <img src="icon/ai-star.svg">
+        <p>AI全明星</p>
+    </div>
     <span class="choose">
     </span>
     <p style="background-color: rgba(11,45,14,0);z-index:1;position: absolute;top:0px;left:0px;height:100%;width:100%" oncontextmenu="return showcm(event,'desktop');"></p>`;
@@ -4058,7 +4062,7 @@ if (!location.href.match(/((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.){3}(\d|[1-9]\d|
         });
         // 版本检查：通知 SW 清理过期缓存
         if (navigator.serviceWorker.controller) {
-            navigator.serviceWorker.controller.postMessage({ head: 'check_version', version: '20260828' });
+            navigator.serviceWorker.controller.postMessage({ head: 'check_version', version: '20260828b' });
         }
     });
     // navigator.serviceWorker.controller.postMessage({
