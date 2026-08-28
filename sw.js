@@ -18,6 +18,23 @@ this.addEventListener('fetch', function (event) {
         console.log('动态请求', event.request.url);
         return fetch(event.request);
       }
+      // HTML 和 JS 文件使用网络优先策略，确保代码更新即时生效
+      if (event.request.url.match(/\.(html?|js)(\?|$)/)) {
+        return fetch(event.request).then(response => {
+          if (response && response.status === 200) {
+            const responseClone = response.clone();
+            caches.open('def').then(cache => {
+              cache.put(event.request, responseClone);
+            });
+          }
+          return response;
+        }).catch(() => {
+          return res || fetch(event.request).catch(err => {
+            console.log(err);
+          });
+        });
+      }
+      // 其他资源使用缓存优先策略
       return res ||
         fetch(event.request)
           .then(responese => {
