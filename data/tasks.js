@@ -68,11 +68,6 @@ let taskmgrTasks = [
         link: 'picture-viewer'
     },
     {
-        name: '2048',
-        icon: 'icon/2048.svg',
-        link: 'game2048'
-    },
-    {
         name: '终端',
         icon: 'icon/terminal.svg',
         link: 'terminal'

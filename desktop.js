@@ -2655,108 +2655,6 @@ Microsoft Windows [版本 12.0.39035.7324]
             null
         }
     },
-    game2048: {
-        grid: [],
-        score: 0,
-        best: 0,
-        size: 4,
-        colors: {0:'#cdc1b4',2:'#eee4da',4:'#ede0c8',8:'#f2b179',16:'#f59563',32:'#f67c5f',64:'#f65e3b',128:'#edcf72',256:'#edcc61',512:'#edc850',1024:'#edc53f',2048:'#edc22e'},
-        init: () => {
-            apps.game2048.best = parseInt(localStorage.getItem('game2048-best') || '0');
-            document.getElementById('game2048-best').textContent = apps.game2048.best;
-            apps.game2048.reset();
-            document.addEventListener('keydown', apps.game2048.handleKey);
-            // Mouse swipe support
-            const board = document.getElementById('game2048-board');
-            if (board) {
-                let startX, startY;
-                board.addEventListener('mousedown', e => { startX = e.clientX; startY = e.clientY; });
-                board.addEventListener('mouseup', e => {
-                    const dx = e.clientX - startX, dy = e.clientY - startY;
-                    if (Math.abs(dx) < 20 && Math.abs(dy) < 20) return;
-                    if (Math.abs(dx) > Math.abs(dy)) apps.game2048.move(dx > 0 ? 'right' : 'left');
-                    else apps.game2048.move(dy > 0 ? 'down' : 'up');
-                });
-            }
-        },
-        reset: () => {
-            apps.game2048.grid = Array(apps.game2048.size).fill(null).map(() => Array(apps.game2048.size).fill(0));
-            apps.game2048.score = 0;
-            document.getElementById('game2048-score').textContent = '0';
-            apps.game2048.addRandom();
-            apps.game2048.addRandom();
-            apps.game2048.render();
-        },
-        addRandom: () => {
-            const empty = [];
-            for (let r = 0; r < apps.game2048.size; r++)
-                for (let c = 0; c < apps.game2048.size; c++)
-                    if (apps.game2048.grid[r][c] === 0) empty.push({r, c});
-            if (empty.length === 0) return;
-            const cell = empty[Math.floor(Math.random() * empty.length)];
-            apps.game2048.grid[cell.r][cell.c] = Math.random() < 0.9 ? 2 : 4;
-        },
-        render: () => {
-            const board = document.getElementById('game2048-board');
-            if (!board) return;
-            let html = '';
-            for (let r = 0; r < apps.game2048.size; r++) {
-                for (let c = 0; c < apps.game2048.size; c++) {
-                    const v = apps.game2048.grid[r][c];
-                    const color = apps.game2048.colors[v] || '#3c3a32';
-                    const textColor = v <= 4 ? '#776e65' : '#f9f6f2';
-                    const fontSize = v >= 1024 ? '22px' : v >= 128 ? '28px' : '34px';
-                    html += `<div class="tile" style="background:${color};color:${textColor};font-size:${fontSize}">${v || ''}</div>`;
-                }
-            }
-            board.innerHTML = html;
-        },
-        move: (dir) => {
-            const g = apps.game2048.grid;
-            const n = apps.game2048.size;
-            let moved = false;
-            const rotate = () => { const ng = Array(n).fill(null).map(() => Array(n).fill(0)); for (let r = 0; r < n; r++) for (let c = 0; c < n; c++) ng[c][n-1-r] = g[r][c]; for (let r = 0; r < n; r++) for (let c = 0; c < n; c++) g[r][c] = ng[r][c]; };
-            const slideLeft = () => {
-                for (let r = 0; r < n; r++) {
-                    let row = g[r].filter(v => v !== 0);
-                    for (let i = 0; i < row.length - 1; i++) {
-                        if (row[i] === row[i+1]) { row[i] *= 2; apps.game2048.score += row[i]; row.splice(i+1, 1); }
-                    }
-                    while (row.length < n) row.push(0);
-                    if (g[r].join(',') !== row.join(',')) moved = true;
-                    g[r] = row;
-                }
-            };
-            const rotations = {left: 0, up: 1, right: 2, down: 3};
-            for (let i = 0; i < rotations[dir]; i++) rotate();
-            slideLeft();
-            for (let i = 0; i < (4 - rotations[dir]) % 4; i++) rotate();
-            if (moved) {
-                apps.game2048.addRandom();
-                document.getElementById('game2048-score').textContent = apps.game2048.score;
-                if (apps.game2048.score > apps.game2048.best) {
-                    apps.game2048.best = apps.game2048.score;
-                    localStorage.setItem('game2048-best', apps.game2048.best);
-                    document.getElementById('game2048-best').textContent = apps.game2048.best;
-                }
-                apps.game2048.render();
-                // Check game over
-                let canMove = false;
-                for (let r = 0; r < n && !canMove; r++)
-                    for (let c = 0; c < n && !canMove; c++) {
-                        if (g[r][c] === 0) canMove = true;
-                        if (c < n-1 && g[r][c] === g[r][c+1]) canMove = true;
-                        if (r < n-1 && g[r][c] === g[r+1][c]) canMove = true;
-                    }
-                if (!canMove) setTimeout(() => alert('游戏结束！得分: ' + apps.game2048.score), 200);
-            }
-        },
-        handleKey: (e) => {
-            if (!$('.window.game2048.foc').length) return;
-            const map = {ArrowUp:'up',ArrowDown:'down',ArrowLeft:'left',ArrowRight:'right',w:'up',s:'down',a:'left',d:'right'};
-            if (map[e.key]) { apps.game2048.move(map[e.key]); e.preventDefault(); }
-        }
-    },
     donate: {
         records: [
             { name: 'Alex_9527', amount: 10.00, date: '2026-08-10', msg: '项目很棒，继续加油！' },
@@ -3165,7 +3063,6 @@ let icon = {
     vscode: 'vscode.png',
     // python: 'python.png',
     winver: 'about.svg',
-    game2048: '2048.svg',
     // run: 'run.png',
     // whiteboard: 'whiteboard.png',
     taskmgr: 'taskmgr.png'
@@ -4070,7 +3967,7 @@ if (!location.href.match(/((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.){3}(\d|[1-9]\d|
         });
         // 版本检查：通知 SW 清理过期缓存
         if (navigator.serviceWorker.controller) {
-            navigator.serviceWorker.controller.postMessage({ head: 'check_version', version: '20260828d' });
+            navigator.serviceWorker.controller.postMessage({ head: 'check_version', version: '20260828e' });
         }
     });
     // navigator.serviceWorker.controller.postMessage({
