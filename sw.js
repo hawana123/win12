@@ -1,3 +1,4 @@
+const sw_version = '20260828';
 let dymanic = [
   'assets.msn.cn'
 ]
@@ -20,11 +21,13 @@ this.addEventListener('fetch', function (event) {
       return res ||
         fetch(event.request)
           .then(responese => {
-            const responeseClone = responese.clone();
-            caches.open('def').then(cache => {
-              console.log('下载数据', responeseClone.url);
-              cache.put(event.request, responeseClone);
-            })
+            if (responese.status === 200) {
+              const responeseClone = responese.clone();
+              caches.open('def').then(cache => {
+                console.log('下载数据', responeseClone.url);
+                cache.put(event.request, responeseClone);
+              })
+            }
             return responese;
           })
           .catch(err => {
@@ -76,6 +79,12 @@ this.addEventListener('message', function (e) {
   if (e.data.head == 'update') {
     if(e.data.force)update(true);
     else update();
+  }
+  if (e.data.head == 'check_version') {
+    if (e.data.version !== sw_version) {
+      console.log('SW版本不匹配，强制更新缓存');
+      update(true);
+    }
   }
 });
 this.addEventListener('activate', update);

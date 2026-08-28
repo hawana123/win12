@@ -4042,9 +4042,9 @@ if (!location.href.match(/((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.){3}(\d|[1-9]\d|
     $('#loginback').css('display', 'flex');
     shownotice('about');
     navigator.serviceWorker.register('sw.js', { updateViaCache: 'none', scope: './' }).then(reg => {
-
+    
         reg.update();
-
+    
         reg.addEventListener('updatefound', () => {
             // 正在安装的新的 SW
             const newWorker = reg.installing;
@@ -4054,8 +4054,12 @@ if (!location.href.match(/((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.){3}(\d|[1-9]\d|
             // // "installed"  - 安装完成
             // // "activating" - 激活事件被触发，但还没完成
             // // "activated"  - 激活成功
-            // // "redundant"  - 废弃，可能是因为安装失败，或者是被一个新版本覆盖
+            // // "redundant" - 废弃，可能是因为安装失败，或者是被一个新版本覆盖
         });
+        // 版本检查：通知 SW 清理过期缓存
+        if (navigator.serviceWorker.controller) {
+            navigator.serviceWorker.controller.postMessage({ head: 'check_version', version: '20260828' });
+        }
     });
     // navigator.serviceWorker.controller.postMessage({
     //     head: 'is_update'
