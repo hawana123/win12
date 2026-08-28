@@ -19,7 +19,7 @@ this.addEventListener('fetch', function (event) {
         return fetch(event.request);
       }
       // HTML 和 JS 文件使用网络优先策略，确保代码更新即时生效
-      if (event.request.url.match(/\.(html?|js)(\?|$)/)) {
+      if (event.request.method === 'GET' && event.request.url.match(/\.(html?|js)(\?|$)/)) {
         return fetch(event.request).then(response => {
           if (response && response.status === 200) {
             const responseClone = response.clone();
@@ -38,7 +38,7 @@ this.addEventListener('fetch', function (event) {
       return res ||
         fetch(event.request)
           .then(responese => {
-            if (responese.status === 200) {
+            if (event.request.method === 'GET' && responese.status === 200) {
               const responeseClone = responese.clone();
               caches.open('def').then(cache => {
                 console.log('下载数据', responeseClone.url);
