@@ -1,6 +1,53 @@
 // 后端服务器
 // loadlang();
 const server = ''; // 'http://win12server.freehk.svipss.top/';
+
+// 延迟加载广告：仅在容器可见时触发
+function loadAds() {
+    console.log('[loadAds] called, adsbygoogle exists:', !!window.adsbygoogle, 'push exists:', !!(window.adsbygoogle && window.adsbygoogle.push));
+    // 等待 adsbygoogle.js 加载完成
+    if (!window.adsbygoogle || !window.adsbygoogle.push) {
+        console.log('[loadAds] adsbygoogle not ready, retrying in 500ms');
+        setTimeout(loadAds, 500);
+        return;
+    }
+    // 延迟检查容器可见性，等待 CSS 动画完成
+    setTimeout(function () {
+        try {
+            var ads = document.querySelectorAll('.adsbygoogle');
+            console.log('[loadAds] found', ads.length, 'ad elements');
+            ads.forEach(function (ad, i) {
+                console.log('[loadAds] ad', i, 'loaded:', ad.dataset.adLoaded, 'offsetParent:', !!ad.offsetParent, 'offsetWidth:', ad.offsetWidth);
+                if (!ad.dataset.adLoaded && ad.offsetParent && ad.offsetWidth > 0) {
+                    console.log('[loadAds] pushing ad', i);
+                    window.adsbygoogle.push({});
+                    ad.dataset.adLoaded = 'true';
+                }
+            });
+        } catch (e) {
+            console.error('[loadAds] error:', e);
+        }
+    }, 300);
+}
+
+// 清除 Service Worker 缓存
+function clearSwCache() {
+    if (!('caches' in window)) {
+        shownotice('sw-cache-none');
+        return;
+    }
+    caches.keys().then(function (names) {
+        var count = names.length;
+        if (count === 0) {
+            alert('缓存已为空，无需清除');
+            return;
+        }
+        Promise.all(names.map(function (name) { return caches.delete(name); })).then(function () {
+            alert('已清除 ' + count + ' 个缓存，页面即将刷新');
+            setTimeout(function () { location.reload(); }, 800);
+        });
+    });
+}
 const pages = {
     'get-title': '', // 获取标题
 };
@@ -2351,6 +2398,7 @@ Microsoft Windows [版本 12.0.39035.7324]
         },
         showdetail: i => {
             $('#search-win>.ans>.view').addClass('show');
+            loadAds();
             let inf = apps.search.rand[i];
             $('#search-win>.ans>.view>.fname>.bi').attr('class', 'bi bi-file-earmark-' + inf.bi);
             $('#search-win>.ans>.view>.fname>.name').text(inf.name);
@@ -3884,6 +3932,10 @@ function setIcon() {
     <div class="b" ondblclick="window.open('https://aai.zoz.la','_blank');" ontouchstart="window.open('https://aai.zoz.la','_blank');" win12_title="https://aai.zoz.la">
         <img src="icon/copilot.svg">
         <p>AI前沿</p>
+    </div>
+    <div class="b" ondblclick="window.open('https://game.zoz.la','_blank');" ontouchstart="window.open('https://game.zoz.la','_blank');" win12_title="https://game.zoz.la">
+        <img src="icon/game-center.svg">
+        <p>游戏中心</p>
     </div>
     <span class="choose">
     </span>

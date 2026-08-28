@@ -597,9 +597,7 @@ showcm(event,id,arg) 显示右键菜单，使用方法：oncontextmenu="return s
 						 data-ad-slot="2672775738"
 						 data-ad-format="auto"
 						 data-full-width-responsive="true"></ins>
-					<script>
-						(adsbygoogle = window.adsbygoogle || []).push({});
-					</script>
+					<!-- 广告将在窗口显示时通过 loadAds() 加载 -->
 				</div>
 				<div class="fname" style="display:none">
 					<i class="bi bi-search"></i>
@@ -801,9 +799,7 @@ showcm(event,id,arg) 显示右键菜单，使用方法：oncontextmenu="return s
 						 data-ad-slot="2672775738"
 						 data-ad-format="auto"
 						 data-full-width-responsive="true"></ins>
-					<script>
-						(adsbygoogle = window.adsbygoogle || []).push({});
-					</script>
+					<!-- 广告将在窗口显示时通过 loadAds() 加载 -->
 				</div>
 				<div class="card" style="grid-column: 1/4;grid-row: 3/5;">
 
@@ -814,9 +810,7 @@ showcm(event,id,arg) 显示右键菜单，使用方法：oncontextmenu="return s
 						 data-ad-slot="2672775738"
 						 data-ad-format="auto"
 						 data-full-width-responsive="true"></ins>
-					<script>
-						(adsbygoogle = window.adsbygoogle || []).push({});
-					</script>
+					<!-- 广告将在窗口显示时通过 loadAds() 加载 -->
 
 				</div>
 				<div class="card" style="grid-column: 3/6;grid-row: 9/11;background:linear-gradient(#00000000 0 30%,var(--bg) 80%),url(img/office.png) center;background-size: cover;">
@@ -1783,6 +1777,7 @@ showcm(event,id,arg) 显示右键菜单，使用方法：oncontextmenu="return s
 					<p class="title">隐私和安全性</p>
 					<div class="setting-list">
 						<a onclick="localStorage.setItem('desktop','[]');setIcon();"><icon><i class="bi bi-trash3"></i></icon><div><p>清除桌面图标</p><p>这将清除用户自定义的所有图标</p></div><i class="bi bi-chevron-right"></i></a>
+						<a onclick="clearSwCache()"><icon><i class="bi bi-trash"></i></icon><div><p>清除缓存</p><p>清除 Service Worker 缓存，解决更新后内容不生效的问题</p></div><i class="bi bi-chevron-right"></i></a>
 					</div>
 				</div>
 				<div class="cnt update">
@@ -2351,6 +2346,7 @@ showcm(event,id,arg) 显示右键菜单，使用方法：oncontextmenu="return s
 				<a onclick="apps.edge.goto('https://av.zoz.la')" win12_title="https://av.zoz.la" class="save-item"><i class="bi bi-file-earmark"></i>头像魔法师</a>
 				<a onclick="apps.edge.goto('https://model.zoz.la')" win12_title="https://model.zoz.la" class="save-item"><i class="bi bi-file-earmark"></i>AI大模型数据库</a>
 				<a onclick="apps.edge.goto('https://shici.zoz.la')" win12_title="https://shici.zoz.la" class="save-item"><i class="bi bi-file-earmark"></i>中华诗词网</a>
+				<a onclick="apps.edge.goto('https://game.zoz.la')" win12_title="https://game.zoz.la" class="save-item"><i class="bi bi-file-earmark"></i>游戏中心</a>
 				<style>
 					#save-bar{
 						scrollbar-width: none; /* Firefox */
