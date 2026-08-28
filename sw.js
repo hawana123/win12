@@ -1,4 +1,4 @@
-const sw_version = '20260828b';
+const sw_version = '20260828c';
 let dymanic = [
   'assets.msn.cn'
 ]

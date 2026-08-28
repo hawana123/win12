@@ -51,7 +51,7 @@ function clearSwCache() {
 const pages = {
     'get-title': '', // 获取标题
 };
-//settings page list right hight light <span>       @Junchen Yi 
+//settings page list right hight light <span>       @Junchen Yi
 document.querySelectorAll(`list.focs`).forEach(li => {
     li.addEventListener('click', e => {
         let _ = li.querySelector('span.focs'), la = li.querySelector('a.check'),
@@ -754,7 +754,7 @@ shutdown [-s] [-r] [-f] [-a] [-t time]
 -t time:指定在 time秒 后操作
 
 其余不多做介绍了` + (inTerminal?`` : `
-请按任意键继续.&nbsp;.&nbsp;.<input type="text" onkeydown="hidewin('terminal')"></input>`)); 
+请按任意键继续.&nbsp;.&nbsp;.<input type="text" onkeydown="hidewin('terminal')"></input>`));
                 // 所以你是没事干吗？。。提示：github并不是以行数来计算贡献的哦   from @tjy-gitnub
                 $('#win-terminal>pre>input').focus()
             }
@@ -2016,7 +2016,7 @@ let apps = {
             }
             return false;
         },
-        // 禁止奇奇怪怪的缩进！尽量压行，不要毫无意义地全部格式化和展开！ 
+        // 禁止奇奇怪怪的缩进！尽量压行，不要毫无意义地全部格式化和展开！
         path: {folder:{'C:':{folder:{'Program Files':{folder:{'WindowsApps':{folder:{},file:[]},'Microsoft':{folder:{},file:[]}},file:[{name:'about.exe',ico:'icon/about.svg',command:"openapp('about')"},{name:'setting.exe',ico:'icon/setting.svg',command:"openapp('setting')"},]},'Program Files (x86)':{folder:{'Microsoft':{folder:{'Edge':{folder:{'Application':{folder:{'SetupMetrics':{folder:{},file:[]}},file:[{name:'msedge.exe',ico:'icon/edge.svg',command:"openapp('edge')"}]}}}}}}},'Windows':{folder:{'Boot':{folder:{},file:[]},'System':{folder:{},file:[]},'SysWOW64':{folder:{},file:[]},'System32':{folder:{},file:[{name:'calc.exe',ico:'icon/calc.svg',command:"openapp('calc')"},{name:'cmd.exe',ico:'icon/terminal.svg',command:"openapp('terminal')"},{name:'notepad.exe',ico:'icon/notepad.svg',command:"openapp('notepad')"},{name:'taskmgr.exe',ico:'icon/taskmgr.png',command:"openapp('taskmgr')"},{name:'winver.exe',ico:'icon/about.svg',command:"openapp('winver')"},]}},file:[{name:'explorer.exe',ico:'icon/explorer.svg',command:"apps.explorer.newtab()"},{name:'notepad.exe',ico:'icon/notepad.svg',command:"openapp('notepad')"},{name:'py.exe',ico:'icon/python.png',command:"openapp('python')"},]},'用户':{folder:{'Administrator':{folder:{'文档':{folder:{'IISExpress':{folder:{},file:[]},'PowerToys':{folder:{},file:[]}},file:[{name:'瓶盖介绍.doc',ico:'icon/files/word.png',command:''},{name:'瓶盖质量统计分析.xlsx',ico:'icon/files/excel.png',command:''},]},'图片':{folder:{'本机照片':{folder:{},file:[]},'屏幕截图':{folder:{},file:[]}},file:[{name:'瓶盖构造图.png',ico:'icon/files/img.png',command:''},{name:'可口可乐瓶盖.jpg',ico:'icon/files/img.png',command:''},]},'AppData':{folder:{'Local':{folder:{'Microsoft':{folder:{'Windows':{folder:{'Fonts':{},'TaskManager':{},'Themes':{},'Shell':{},'应用程序快捷方式':{},}},}},'Programs':{folder:{'Python':{folder:{'Python310':{folder:{'DLLs':{},'Doc':{},'include':{},'Lib':{folder:{'site-packages':{},'tkinter':{},}},'libs':{},'Script':{},'share':{},'tcl':{},'Tools':{}},file:[{name:'python.exe',ico:'icon/python.png',command:"openapp('python')"}]}},}}},'Temp':{folder:{}},}},'LocalLow':{folder:{'Microsoft':{folder:{'Windows':{},}},}},'Roaming':{folder:{'Microsoft':{folder:{'Windows':{folder:{'「开始」菜单':{folder:{'程序':{folder:{}},}},}},}},}},},file:[]},'音乐':{folder:{'录音机':{folder:{},file:[]}}}}},'公用':{folder:{'公用文档':{folder:{'IISExpress':{folder:{},file:[]},'PowerToys':{folder:{},file:[]}},file:[]},'公用图片':{folder:{'本机照片':{folder:{},file:[]},'屏幕截图':{folder:{},file:[]}},file:[]},'公用音乐':{folder:{'录音机':{folder:{},file:[]}}}}}}}},file:[]},'D:':{folder:{'Microsoft':{folder:{},file:[]},'美女图片':{folder:{},file:[{name:'美女1.jpg',ico:'icon/files/picture.png',command:"apps.pictureViewer.show('https://mall-img.ainkinerp.com/mm/05u03d72vk.jpg?e=1786639804&token=9WiLSmRyj18XAOzOpT7cumR6WlCGqRkgFJlMPwFu:2tditYrrtkQtj5vFehuCracPtPg=','美女1.jpg')"},{name:'美女2.jpg',ico:'icon/files/picture.png',command:"apps.pictureViewer.show('https://mall-img.ainkinerp.com/mm/06h01k86xw.jpg?e=1786639804&token=9WiLSmRyj18XAOzOpT7cumR6WlCGqRkgFJlMPwFu:AxB9UqPpbjEdXBm01Z20D_XuP1I=','美女2.jpg')"},{name:'美女3.jpg',ico:'icon/files/picture.png',command:"apps.pictureViewer.show('https://mall-img.ainkinerp.com/mm/06h02qov13.jpg?e=1786639804&token=9WiLSmRyj18XAOzOpT7cumR6WlCGqRkgFJlMPwFu:2V_fN2HAJJoWN4WijJeBWv3_n6k=','美女3.jpg')"},{name:'美女4.jpg',ico:'icon/files/picture.png',command:"apps.pictureViewer.show('https://mall-img.ainkinerp.com/mm/06h03jk24x.jpg?e=1786639804&token=9WiLSmRyj18XAOzOpT7cumR6WlCGqRkgFJlMPwFu:M7ou-yeFbE-nnMGnTlTnagm24Mw=','美女4.jpg')"},{name:'美女5.jpg',ico:'icon/files/picture.png',command:"apps.pictureViewer.show('https://mall-img.ainkinerp.com/mm/06h04rp5x8.jpg?e=1786639804&token=9WiLSmRyj18XAOzOpT7cumR6WlCGqRkgFJlMPwFu:WGRRwqcqMmBfDIU_ek5aohxePRw=','美女5.jpg')"},{name:'美女6.jpg',ico:'icon/files/picture.png',command:"apps.pictureViewer.show('https://mall-img.ainkinerp.com/mm/06p01theiv.jpg?e=1786639804&token=9WiLSmRyj18XAOzOpT7cumR6WlCGqRkgFJlMPwFu:B6sisyoRMAvHead3vKK2FgBhSEA=','美女6.jpg')"},{name:'美女7.jpg',ico:'icon/files/picture.png',command:"apps.pictureViewer.show('https://mall-img.ainkinerp.com/mm/07a03i.jpg?e=1786639804&token=9WiLSmRyj18XAOzOpT7cumR6WlCGqRkgFJlMPwFu:XQapgA8pK9rKKcSMDGJFs4SWYwc=','美女7.jpg')"},{name:'美女8.jpg',ico:'icon/files/picture.png',command:"apps.pictureViewer.show('https://mall-img.ainkinerp.com/mm/07c03ymu.jpg?e=1786639804&token=9WiLSmRyj18XAOzOpT7cumR6WlCGqRkgFJlMPwFu:pA45pt5yUQjH2PHj_0r0i0gJLL0=','美女8.jpg')"},{name:'美女9.jpg',ico:'icon/files/picture.png',command:"apps.pictureViewer.show('https://mall-img.ainkinerp.com/mm/16k01yr9rm.jpg?e=1786639804&token=9WiLSmRyj18XAOzOpT7cumR6WlCGqRkgFJlMPwFu:sg46VvCGxHieSjTCqEI-4dq9YxY=','美女9.jpg')"},{name:'美女10.jpg',ico:'icon/files/picture.png',command:"apps.pictureViewer.show('https://mall-img.ainkinerp.com/mm/20b02c.jpg?e=1786639804&token=9WiLSmRyj18XAOzOpT7cumR6WlCGqRkgFJlMPwFu:nNUyEQ9X_dhKvqmggwDgKW7wFa0=','美女10.jpg')"},{name:'美女11.jpg',ico:'icon/files/picture.png',command:"apps.pictureViewer.show('https://mall-img.ainkinerp.com/mm/23l01ifuo8.jpg?e=1786639804&token=9WiLSmRyj18XAOzOpT7cumR6WlCGqRkgFJlMPwFu:Lda50Ns0W--IlTkSkqDmXWCDunM=','美女11.jpg')"},{name:'美女12.jpg',ico:'icon/files/picture.png',command:"apps.pictureViewer.show('https://mall-img.ainkinerp.com/mm/23o01qyqbp.jpg?e=1786639804&token=9WiLSmRyj18XAOzOpT7cumR6WlCGqRkgFJlMPwFu:M5WAoLhAC1K7-_Iw819WE9aAZc8=','美女12.jpg')"},{name:'美女13.jpg',ico:'icon/files/picture.png',command:"apps.pictureViewer.show('https://mall-img.ainkinerp.com/mm/23o05qjiga.jpg?e=1786639804&token=9WiLSmRyj18XAOzOpT7cumR6WlCGqRkgFJlMPwFu:f4hN-t8MTkkzd7vxyR2E6DKXJnk=','美女13.jpg')"},{name:'美女14.jpg',ico:'icon/files/picture.png',command:"apps.pictureViewer.show('https://mall-img.ainkinerp.com/mm/25a01f.jpg?e=1786639804&token=9WiLSmRyj18XAOzOpT7cumR6WlCGqRkgFJlMPwFu:7ZfTmVq03N0gW3EiQ2MtdBMzcbk=','美女14.jpg')"},{name:'美女15.jpg',ico:'icon/files/picture.png',command:"apps.pictureViewer.show('https://mall-img.ainkinerp.com/mm/26a05sl23n.jpg?e=1786639804&token=9WiLSmRyj18XAOzOpT7cumR6WlCGqRkgFJlMPwFu:_qiVnjBqKQl2esuDXdSblVSgRA4=','美女15.jpg')"},{name:'美女16.jpg',ico:'icon/files/picture.png',command:"apps.pictureViewer.show('https://mall-img.ainkinerp.com/mm/28z01ahxoh.jpg?e=1786639804&token=9WiLSmRyj18XAOzOpT7cumR6WlCGqRkgFJlMPwFu:2Q0gFomnR5JESGexfpyrNLveeMI=','美女16.jpg')"},{name:'美女17.jpg',ico:'icon/files/picture.png',command:"apps.pictureViewer.show('https://mall-img.ainkinerp.com/mm/28z02eeyie.jpg?e=1786639804&token=9WiLSmRyj18XAOzOpT7cumR6WlCGqRkgFJlMPwFu:1nSqv5VqbpYuTPOoqSrU-Vk0hX0=','美女17.jpg')"}]}},file:[{name:'瓶盖结构说明.docx',ico:'icon/files/word.png',command:''},{name:'可口可乐瓶盖历史.pptx',ico:'icon/files/ppt.png',command:''},]}}},
         history: [],
         historypt: [],
@@ -2355,12 +2355,12 @@ Microsoft Windows [版本 12.0.39035.7324]
                     elt.appendChild(newD);
                 }
                 input.val('');
-    
+
                 // 自动聚焦
                 input.blur();
                 input.focus();
             }
-            
+
         }
     },
     search: {
@@ -2476,11 +2476,11 @@ Microsoft Windows [版本 12.0.39035.7324]
             var divx2 = div.offsetLeft + div.offsetWidth;
             var divy2 = div.offsetTop + div.offsetHeight;
             if (x < divx1 || x > divx2 || y < divy1 || y > divy2) {
-                //如果离开，则执行。。 
+                //如果离开，则执行。。
                 return false;
             }
             else {
-                //如检播到，则执行。。 
+                //如检播到，则执行。。
                 return true;
             }
         },
@@ -2824,7 +2824,7 @@ let widgets = {
         remove: (arg) => {
             $(`.wg.${arg}.menu,.wg.${arg}.toolbar,.wg.${arg}.desktop`).remove();
             widgets[arg].remove();
-        }, 
+        },
         addToToolbar: (arg) => {
             widgets.widgets.remove(arg);
             if ($('.wg.toolbar.' + arg).length != 0) {
@@ -3929,7 +3929,7 @@ function setIcon() {
         <img src="icon/chinese-poetry.png">
         <p>中华诗词</p>
     </div>
-    <div class="b" ondblclick="window.open('https://aai.zoz.la','_blank');" ontouchstart="window.open('https://aai.zoz.la','_blank');" win12_title="https://aai.zoz.la">
+    <div class="b" ondblclick="window.open('https://zoz.la','_blank');" ontouchstart="window.open('https://aai.zoz.la','_blank');" win12_title="https://aai.zoz.la">
         <img src="icon/copilot.svg">
         <p>AI前沿</p>
     </div>
@@ -3940,6 +3940,10 @@ function setIcon() {
     <div class="b" ondblclick="window.open('https://star.xp58.xyz','_blank');" ontouchstart="window.open('https://star.xp58.xyz','_blank');" win12_title="https://star.xp58.xyz">
         <img src="icon/ai-star.svg">
         <p>AI全明星</p>
+    </div>
+    <div class="b" ondblclick="openapp('donate');" ontouchstart="openapp('donate');" oncontextmenu="return showcm(event,'desktop.icon',['donate',-1]);" appname="donate">
+        <img src="icon/donate.svg">
+        <p>捐赠支持</p>
     </div>
     <span class="choose">
     </span>
@@ -4046,9 +4050,9 @@ if (!location.href.match(/((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.){3}(\d|[1-9]\d|
     $('#loginback').css('display', 'flex');
     shownotice('about');
     navigator.serviceWorker.register('sw.js', { updateViaCache: 'none', scope: './' }).then(reg => {
-    
+
         reg.update();
-    
+
         reg.addEventListener('updatefound', () => {
             // 正在安装的新的 SW
             const newWorker = reg.installing;
@@ -4062,7 +4066,7 @@ if (!location.href.match(/((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.){3}(\d|[1-9]\d|
         });
         // 版本检查：通知 SW 清理过期缓存
         if (navigator.serviceWorker.controller) {
-            navigator.serviceWorker.controller.postMessage({ head: 'check_version', version: '20260828b' });
+            navigator.serviceWorker.controller.postMessage({ head: 'check_version', version: '20260828c' });
         }
     });
     // navigator.serviceWorker.controller.postMessage({
