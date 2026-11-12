@@ -388,10 +388,10 @@ showcm(event,id,arg) 显示右键菜单，使用方法：oncontextmenu="return s
 					<p>Windows 安全中心</p>
 				</a>
 				<p class="text">Web 应用</p>
-				<a oncontextmenu="return showcm(event, 'smlapp', ['bilibili', '哔哩哔哩'])"
+				<a oncontextmenu="return showcm(event, 'smlapp', ['gamecenter', '游戏中心'])"
 					onclick="openapp('bilibili');hide_startmenu();">
-					<img src="icon/bilibili.png">
-					<p>哔哩哔哩</p>
+					<img src="icon/game-center.svg">
+					<p>游戏中心</p>
 				</a>
 				<a oncontextmenu="return showcm(event, 'smlapp', ['vscode', 'Visual Studio Code'])"
 					onclick="openapp('vscode');hide_startmenu();">
@@ -402,11 +402,6 @@ showcm(event,id,arg) 显示右键菜单，使用方法：oncontextmenu="return s
 					onclick="openapp('wsa');hide_startmenu();">
 					<img src="icon/wsa.png">
 					<p>适用于 Android™️ 的 Windows 子系统</p>
-				</a>
-				<a oncontextmenu="return showcm(event, 'smlapp', ['windows12', 'Windows 12'])"
-					onclick="openapp('windows12');hide_startmenu();">
-					<img src="icon/logo.svg">
-					<p>Windows 12</p>
 				</a>
 			</list>
 		</div>
@@ -1098,6 +1093,10 @@ showcm(event,id,arg) 显示右键菜单，使用方法：oncontextmenu="return s
 		<div class="b" ondblclick="window.open('https://shici.zoz.la','_blank');" ontouchstart="window.open('https://shici.zoz.la','_blank');" win12_title="https://shici.zoz.la">
 			<img src="icon/chinese-poetry.png">
 			<p>中华诗词</p>
+		</div>
+		<div class="b" ondblclick="window.open('https://3a.zoz.la','_blank');" ontouchstart="window.open('https://3a.zoz.la','_blank');" win12_title="https://3a.zoz.la">
+			<img src="icon/shooter.svg">
+			<p>射击游戏</p>
 		</div>
 		<div class="b" ondblclick="window.open('https://star.xp58.xyz/','_blank');" ontouchstart="window.open('https://star.xp58.xyz/','_blank');" win12_title="https://star.xp58.xyz/">
 			<img src="icon/copilot.svg">

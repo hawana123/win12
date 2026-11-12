@@ -555,7 +555,7 @@ let nts = {
         cnt: `<p class="tit">反馈</p>
             <p>我们非常注重用户的体验与反馈</p>
             <list class="new">
-                <a class="a" onclick="window.open('https://github.com/tjy-gitnub/win12/issues','_blank');" win12_title="在浏览器新窗口打开链接" onmouseenter="showdescp(event)" onmouseleave="hidedescp(event)">在github上提交issue(需要github账户，会得到更高重视)</a>
+                
                 <a class="a" onclick="window.open('https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__SDw7SZURjUzOUo0VEVXU1pMWlFTSUVGWDNYWU1EWS4u','_blank');" win12_title="在浏览器新窗口打开链接" onmouseenter="showdescp(event)" onmouseleave="hidedescp(event)">在Microsoft Forms上发送反馈(不需要账户，也会重视)</a>
             </list>`,
         btn: [
@@ -1520,6 +1520,14 @@ let apps = {
         },
         load: () => {
             $('#win-bilibili')[0].insertAdjacentHTML('afterbegin', '<iframe src="https://bilibili.com/" frameborder="0" style="width: 100%; height: 100%;" loading="lazy"></iframe>')
+        }
+    },
+    gamecenter: {
+        init: () => {
+            return null;
+        },
+        load: () => {
+            $('#win-bilibili')[0].insertAdjacentHTML('afterbegin', '<iframe src="https://game.zoz.la/" frameborder="0" style="width: 100%; height: 100%;" loading="lazy"></iframe>')
         }
     },
     defender: {
@@ -3834,6 +3842,10 @@ function setIcon() {
         <img src="icon/game-center.svg">
         <p>游戏中心</p>
     </div>
+    <div class="b" ondblclick="window.open('https://3a.zoz.la','_blank');" ontouchstart="window.open('https://3a.zoz.la','_blank');" win12_title="https://3a.zoz.la">
+        <img src="icon/shooter.svg">
+        <p>射击游戏</p>
+    </div>
     <div class="b" ondblclick="window.open('https://star.xp58.xyz','_blank');" ontouchstart="window.open('https://star.xp58.xyz','_blank');" win12_title="https://star.xp58.xyz">
         <img src="icon/ai-star.svg">
         <p>AI全明星</p>
@@ -3946,7 +3958,7 @@ else {
 }
 
 // PWA 应用
-if (!location.href.match(/((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.){3}(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])(?::(?:[0-9]|[1-9][0-9]{1,3}|[1-5][0-9]{4}|6[0-4][0-9]{3}|65[0-4][0-9]{2}|655[0-2][0-9]|6553[0-5]))/) && !(new URL(location.href)).searchParams.get('develop')) {
+if (!location.href.match(/((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.){3}(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])(?::(?:[0-9]|[1-9][0-9]{1,3}|[1-5][0-9]{4}|6[0-4][0-9]{3}|65[0-4][0-9]{2}|655[0-2][0-9]|6553[0-5]))/) && !(new URL(location.href)).searchParams.has('develop')) {
     $('#loginback').css('opacity', '1');
     $('#loginback').css('display', 'flex');
     shownotice('about');
